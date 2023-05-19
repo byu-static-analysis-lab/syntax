@@ -11,7 +11,6 @@ void main() {
       // Problems
       // ANF conversion: maze has proc clause, nbody / nucleic have vector literals, splay has match
       // CPS conversion: Nucleic-1 earley - defs in body
-      // Free variables: Scheme to java
       .map((f) => (f, f.readAsStringSync()));
   for (final p in otherPrograms) {
     print(path.basename(p.$1.path));
