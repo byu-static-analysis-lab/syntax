@@ -26,7 +26,8 @@ Exp parseExpr(SExpr e) {
         null => throw UnimplementedError(),
         final c when c == CSymbols.sQuote => QuoteLit(l[1]).expansion,
         final c when c == CSymbols.sQuasiquote => parseQuasiquote(1, l[1]),
-        final c when c == CSymbols.sLambda => Exp.lambda(parseFormals(l[1]), parseBody(l.sublist(2))),
+        final c when c == CSymbols.sLambda || c == CSymbols.sLambday =>
+          Exp.lambda(parseFormals(l[1]), parseBody(l.sublist(2))),
         final c when c == CSymbols.sSetBang => Exp.setE(l[1] as SName, parseExpr(l[2])),
         final c when c == CSymbols.sBegin => Exp.begin(parseBody(l.sublist(1))),
         final c when c == CSymbols.sIfZero => Exp.ifE(

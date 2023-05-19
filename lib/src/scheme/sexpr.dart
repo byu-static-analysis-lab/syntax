@@ -15,6 +15,7 @@ abstract class CSymbols {
   static final sDefine = SExpr.nameFrom("define");
 
   static final sLambda = SExpr.nameFrom("lambda");
+  static final sLambday = SExpr.nameFrom("λ");
 
   static final sLet = SExpr.nameFrom("let");
   static final sLetStar = SExpr.nameFrom("let*");
