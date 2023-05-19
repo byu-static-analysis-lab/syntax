@@ -42,6 +42,12 @@ abstract class CSymbols {
 sealed class SExpr with _$SExpr {
   static final Map<String, SName> _interned = {};
   static final Map<String, SName> _maxTable = {};
+  static reset() {
+    _interned.clear();
+    _maxTable.clear();
+    serialNumberV = 0;
+  }
+
   static int serialNumberV = 0;
   SExpr._();
 

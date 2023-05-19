@@ -20,7 +20,7 @@ extension ListEx<T> on List<T> {
 class Program with _$Program {
   Program._();
   factory Program(List<Def> defs) = _Program;
-  late final label = Term.maxLabel++;
+  final label = Term.maxLabel++;
   @override
   String toString() => defs.map((d) => d.sstring).join('\n\n');
   Exp get toExp => switch (defs) {
@@ -109,7 +109,7 @@ sealed class Exp with _$Exp implements IExp {
   factory Exp.cons(Exp car, Exp cdr) => App(Ref(CSymbols.sCons), [car, cdr]);
 
   @override
-  late final label = Term.maxLabel++;
+  final label = Term.maxLabel++;
   late final ISet<SName> free = map(
     selfLit: (_) => ISet(),
     quoteLit: (_) => ISet(),
@@ -367,7 +367,7 @@ sealed class Def with _$Def implements IDef {
   factory Def.implicit(Exp value) = ImplicitDef;
   factory Def.variable(SName name, Exp value) = VarDef;
   factory Def.function(SName name, Formals formals, Body body) = FunctionDef;
-  late final label = Term.maxLabel++;
+  final label = Term.maxLabel++;
 }
 
 mixin ImpDef on IDef {

@@ -76,7 +76,8 @@ extension AnfExpX on Exp {
         App(:final fun, :final args) =>
           fun.normalizeLinearName((f) => args.normalizeArguments((a) => k(Exp.app(f, a)))),
         _ => throw UnimplementedError(),
-      };
+      }
+        ..free;
 
   Exp normalizeLinearName(Exp Function(Exp) k) => normalizeExp((e) => e.isAtomic ? k(e) : e.let(k));
 }
