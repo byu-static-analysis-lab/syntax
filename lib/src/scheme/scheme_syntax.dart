@@ -258,31 +258,67 @@ extension ExpX on Exp {
       );
 
   String get sDebug => when(
-        selfLit: (lit) => lit.sstring,
-        quoteLit: (lit) => '($label quote ${lit.sstring})',
-        ref: (ref) => ref.sstring,
-        app: (fun, args) => '($label ${fun.sDebug} ${args.sDebug} )',
-        lambda: (formals, body) => '\n($label lambda (${formals.sstring} ) ${body.sDebug})',
-        uLambda: (formals, body) => '\n($label lambda (${formals.sstring} ) ${body.sDebug})',
-        kLambda: (formals, body) => '\n($label lambda (${formals.sstring} ) ${body.sDebug})',
-        ifE: (condition, ifTrue, ifFalse) => '($label if ${condition.sstring} ${ifTrue.sDebug} ${ifFalse.sDebug})',
-        setE: (name, value) => '($label set! ${name.sstring} ${value.sDebug})',
-        values: (values) => '($label values ${values.sDebug})',
+        selfLit: (lit) => '${lit.sstring}$superscript',
+        quoteLit: (lit) => '(quote$superscript ${lit.sstring})',
+        ref: (ref) => '${ref.sstring}$superscript',
+        app: (fun, args) => '(${fun.sDebug} ${args.sDebug} )$superscript',
+        lambda: (formals, body) => '\n(lambda$superscript (${formals.sstring} ) ${body.sDebug})',
+        uLambda: (formals, body) => '\n(uLambda$superscript (${formals.sstring} ) ${body.sDebug})',
+        kLambda: (formals, body) => '\n(kLambda$superscript (${formals.sstring} ) ${body.sDebug})',
+        ifE: (condition, ifTrue, ifFalse) => '(if$superscript ${condition.sstring} ${ifTrue.sDebug} ${ifFalse.sDebug})',
+        setE: (name, value) => '(set!$superscript ${name.sstring} ${value.sDebug})',
+        values: (values) => '(values$superscript ${values.sDebug})',
         letValues: (names, values, body) =>
-            '($label let-values (${names.zipWith(values).map((n) => '${n.$1.sstring} ${n.$2.sstring}').join(" ")}) ${body.sDebug})',
-        begin: (body) => '($label begin ${body.sDebug})',
-        and: (exps) => '($label and ${exps.sDebug})',
-        or: (exps) => '($label or ${exps.sDebug})',
-        cond: (conds) => '($label cond ${conds.map((c) => c.sDebug).join(" ")})',
-        undefined: () => '\'undefined',
-        eVoid: () => '($label void)',
+            '(let-values$superscript (${names.zipWith(values).map((n) => '${n.$1.sstring} ${n.$2.sstring}').join(" ")}) ${body.sDebug})',
+        begin: (body) => '(begin$superscript ${body.sDebug})',
+        and: (exps) => '(and$superscript ${exps.sDebug})',
+        or: (exps) => '(or$superscript ${exps.sDebug})',
+        cond: (conds) => '(cond$superscript ${conds.map((c) => c.sDebug).join(" ")})',
+        undefined: () => '\'undefined$superscript',
+        eVoid: () => '(void$superscript)',
         let: (binds, b) =>
-            '\n($label let (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sDebug})").join(' ')}) ${b.sDebug})',
+            '\n(let$superscript (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sDebug})").join(' ')}) ${b.sDebug})',
         letStar: (binds, b) =>
-            '\n($label let* (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sDebug})").join(' ')}) ${b.sDebug})',
+            '\n(let*$superscript (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sDebug})").join(' ')}) ${b.sDebug})',
         letRec: (binds, b) =>
-            '\n($label letrec (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sDebug})").join(' ')}) ${b.sDebug})',
+            '\n(letrec$superscript (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sDebug})").join(' ')}) ${b.sDebug})',
       );
+
+  String get superscript => label.superscript;
+}
+
+extension SuperscriptStringX on int {
+  String get superscript {
+    var i = this;
+    var result = "";
+    do {
+      final digit = i % 10;
+      switch (digit) {
+        case 0:
+          result = "⁰$result";
+        case 1:
+          result = "¹$result";
+        case 2:
+          result = "²$result";
+        case 3:
+          result = "³$result";
+        case 4:
+          result = "⁴$result";
+        case 5:
+          result = "⁵$result";
+        case 6:
+          result = "⁶$result";
+        case 7:
+          result = "⁷$result";
+        case 8:
+          result = "⁸$result";
+        case 9:
+          result = "⁹$result";
+      }
+      i = i ~/ 10;
+    } while (i > 0);
+    return result;
+  }
 }
 
 extension FormalsXX on (List<dynamic>, dynamic) {
@@ -388,11 +424,13 @@ extension DefX on Def {
         function: (name, formals, body) => '(define ${name.sstring} (lambda (${formals.sstring}) ${body.sstring}))');
   }
 
+  String get superscript => label.superscript;
+
   String get sDebug {
     return when(
         implicit: (value) => value.sDebug,
-        variable: (name, value) => '($label define ${name.sstring} ${value.sDebug})',
+        variable: (name, value) => '(define$superscript ${name.sstring} ${value.sDebug})',
         function: (name, formals, body) =>
-            '($label define ${name.sstring} (lambda (${formals.sstring}) ${body.sDebug}))');
+            '(define$superscript ${name.sstring} (lambda (${formals.sstring}) ${body.sDebug}))');
   }
 }
