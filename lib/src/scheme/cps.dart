@@ -64,7 +64,7 @@ extension ExpCpsX on Exp {
           }
         }(),
       App(:final fun, :final args) => fun.convertExp((f) => args.convertArguments((a) => App(f, [...a, q]))),
-      _ => throw Exception("Not ANF Expression $q"),
+      _ => throw Exception("Not ANF Expression $sstring $q"),
     };
   }
 }

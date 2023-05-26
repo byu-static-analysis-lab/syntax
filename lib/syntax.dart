@@ -1,5 +1,6 @@
 library;
 
+export 'src/scheme/alphatize.dart';
 export 'src/scheme/anf.dart';
 export 'src/scheme/cps.dart';
 export 'src/scheme/scheme_parser.dart';
