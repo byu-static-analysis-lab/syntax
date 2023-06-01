@@ -26,7 +26,8 @@ class Program with _$Program {
   Exp get toExp => switch (defs) {
         [] => Exp.eVoid(),
         [ImplicitDef(:final value)] => value,
-        _ => LetRec(defs.map((d) => (d.name, d.value)).toList(), Body([], [Ref(defs.last.name)]))
+        _ => LetRec(defs.map((d) => (d.name, d.value)).toList(),
+            Body([], [Ref(defs.last.name)]))
       };
 }
 
@@ -55,7 +56,8 @@ abstract interface class ILetForm {
 
 extension QuoteLitM on QuoteLit {
   Exp get expansion => switch (lit) {
-        SCons(:final car, :final cdr) => Exp.cons(QuoteLit(car).expansion, QuoteLit(cdr).expansion),
+        SCons(:final car, :final cdr) =>
+          Exp.cons(QuoteLit(car).expansion, QuoteLit(cdr).expansion),
         _ => this,
       };
 }
@@ -80,7 +82,8 @@ sealed class Exp with _$Exp implements IExp {
   factory Exp.ifE(Exp condition, Exp ifTrue, Exp ifFalse) = IfExp;
   factory Exp.setE(SName name, Exp value) = SetExp;
   factory Exp.values(List<Exp> values) = Values;
-  factory Exp.letValues(List<SName> names, List<Exp> values, Body body) = LetValues;
+  factory Exp.letValues(List<SName> names, List<Exp> values, Body body) =
+      LetValues;
   factory Exp.begin(Body body) = Begin;
   @Implements<StarExp>()
   @With<StarAndMixin>()
@@ -116,20 +119,26 @@ sealed class Exp with _$Exp implements IExp {
     undefined: (_) => ISet(),
     eVoid: (_) => ISet(),
     ref: (ref) => ISet({ref.ref}),
-    lambda: (l) => l.body.free.removeAll([...l.formals.$1, if (l.formals.$2 != null) l.formals.$2]),
-    uLambda: (l) => l.body.free.removeAll([...l.formals.$1, if (l.formals.$2 != null) l.formals.$2]),
-    kLambda: (l) => l.body.free.removeAll([...l.formals.$1, if (l.formals.$2 != null) l.formals.$2]),
+    lambda: (l) => l.body.free
+        .removeAll([...l.formals.$1, if (l.formals.$2 != null) l.formals.$2]),
+    uLambda: (l) => l.body.free
+        .removeAll([...l.formals.$1, if (l.formals.$2 != null) l.formals.$2]),
+    kLambda: (l) => l.body.free
+        .removeAll([...l.formals.$1, if (l.formals.$2 != null) l.formals.$2]),
     ifE: (e) => e.condition.free.addAll(e.ifTrue.free).addAll(e.ifFalse.free),
     setE: (e) => e.value.free.add(e.name),
     values: (e) => e.values.fold(ISet(), (acc, e) => acc.addAll(e.free)),
-    letValues: (e) => e.values.fold(e.body.free, (acc, e) => acc.addAll(e.free)).removeAll(e.names),
+    letValues: (e) => e.values
+        .fold(e.body.free, (acc, e) => acc.addAll(e.free))
+        .removeAll(e.names),
     app: (a) => a.args.fold(a.fun.free, (acc, e) => acc.addAll(e.free)),
     begin: (e) => e.body.free,
     and: (e) => e.exps.fold(ISet(), (acc, e) => acc.addAll(e.free)),
     or: (e) => e.exps.fold(ISet(), (acc, e) => acc.addAll(e.free)),
     cond: (e) => e.conds.fold(ISet(), (acc, e) => acc.addAll(e.free)),
-    let: (e) => e.bindings
-        .fold(e.body.free.removeAll(e.bindings.map((b) => b.$1).toList()), (acc, e1) => acc.addAll(e1.$2.free)),
+    let: (e) => e.bindings.fold(
+        e.body.free.removeAll(e.bindings.map((b) => b.$1).toList()),
+        (acc, e1) => acc.addAll(e1.$2.free)),
     letStar: (e) => e.bindings
         .fold(e.body.free, (acc, e1) => acc.addAll(e1.$2.free))
         .removeAll(e.bindings.map((b) => b.$1).toList()),
@@ -139,7 +148,8 @@ sealed class Exp with _$Exp implements IExp {
   );
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other.label == label);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other.label == label);
   }
 
   @override
@@ -162,7 +172,8 @@ mixin StarAndMixin on StarExp {
   late final Exp toIf = switch (exps) {
     [] => SelfLit(SBool(true)),
     [final exp] => exp,
-    [final exp, ...final exps] => Exp.ifE(exp, And(exps).toIf, SelfLit(SBool(false))),
+    [final exp, ...final exps] =>
+      Exp.ifE(exp, And(exps).toIf, SelfLit(SBool(false))),
   };
 }
 
@@ -195,7 +206,10 @@ extension ExpX on Exp {
   bool get isAtomic => isPure && mustHalt;
 
   Body get body {
-    return switch (this) { Begin(body: final b && Body(defs: [], exps: [final _])) => b, _ => Body([], [this]) };
+    return switch (this) {
+      Begin(body: final b && Body(defs: [], exps: [final _])) => b,
+      _ => Body([], [this])
+    };
   }
 
   bool get isPure => maybeMap(
@@ -225,7 +239,12 @@ extension ExpX on Exp {
   bool get isDuplicable => maybeMap(
         ref: (_) => true,
         selfLit: (_) => true,
-        quoteLit: (q) => switch (q.lit) { SName() => true, SNum() => true, SNil() => true, _ => false },
+        quoteLit: (q) => switch (q.lit) {
+          SName() => true,
+          SNum() => true,
+          SNil() => true,
+          _ => false
+        },
         undefined: (_) => true,
         eVoid: (_) => true,
         orElse: () => false,
@@ -236,10 +255,14 @@ extension ExpX on Exp {
         quoteLit: (lit) => '(quote ${lit.sstring})',
         ref: (ref) => ref.sstring,
         app: (fun, args) => '(${fun.sstring} ${args.sstring} )',
-        lambda: (formals, body) => '(lambda (${formals.sstring} ) ${body.sstring})',
-        uLambda: (formals, body) => '(lambda (${formals.sstring} ) ${body.sstring})',
-        kLambda: (formals, body) => '(lambda (${formals.sstring} ) ${body.sstring})',
-        ifE: (condition, ifTrue, ifFalse) => '(if ${condition.sstring} ${ifTrue.sstring} ${ifFalse.sstring})',
+        lambda: (formals, body) =>
+            '(lambda (${formals.sstring} ) ${body.sstring})',
+        uLambda: (formals, body) =>
+            '(lambda (${formals.sstring} ) ${body.sstring})',
+        kLambda: (formals, body) =>
+            '(lambda (${formals.sstring} ) ${body.sstring})',
+        ifE: (condition, ifTrue, ifFalse) =>
+            '(if ${condition.sstring} ${ifTrue.sstring} ${ifFalse.sstring})',
         setE: (name, value) => '(set! ${name.sstring} ${value.sstring})',
         values: (values) => '(values ${values.sstring})',
         letValues: (names, values, body) =>
@@ -250,7 +273,8 @@ extension ExpX on Exp {
         cond: (conds) => '(cond ${conds.map((c) => c.sstring).join(" ")})',
         undefined: () => '\'undefined',
         eVoid: () => '(void)',
-        let: (binds, b) => '(let (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sstring})").join(' ')}) ${b.sstring})',
+        let: (binds, b) =>
+            '(let (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sstring})").join(' ')}) ${b.sstring})',
         letStar: (binds, b) =>
             '(let* (${binds.map((b) => "(${b.$1.sstring} ${b.$2.sstring})").join(' ')}) ${b.sstring})',
         letRec: (binds, b) =>
@@ -262,18 +286,24 @@ extension ExpX on Exp {
         quoteLit: (lit) => '(quote$superscript ${lit.sstring})',
         ref: (ref) => '${ref.sstring}$superscript',
         app: (fun, args) => '(${fun.sDebug} ${args.sDebug} )$superscript',
-        lambda: (formals, body) => '\n(lambda$superscript (${formals.sstring} ) ${body.sDebug})',
-        uLambda: (formals, body) => '\n(uLambda$superscript (${formals.sstring} ) ${body.sDebug})',
-        kLambda: (formals, body) => '\n(kLambda$superscript (${formals.sstring} ) ${body.sDebug})',
-        ifE: (condition, ifTrue, ifFalse) => '(if$superscript ${condition.sstring} ${ifTrue.sDebug} ${ifFalse.sDebug})',
-        setE: (name, value) => '(set!$superscript ${name.sstring} ${value.sDebug})',
+        lambda: (formals, body) =>
+            '\n(lambda$superscript (${formals.sstring} ) ${body.sDebug})',
+        uLambda: (formals, body) =>
+            '\n(uLambda$superscript (${formals.sstring} ) ${body.sDebug})',
+        kLambda: (formals, body) =>
+            '\n(kLambda$superscript (${formals.sstring} ) ${body.sDebug})',
+        ifE: (condition, ifTrue, ifFalse) =>
+            '(if$superscript ${condition.sstring} ${ifTrue.sDebug} ${ifFalse.sDebug})',
+        setE: (name, value) =>
+            '(set!$superscript ${name.sstring} ${value.sDebug})',
         values: (values) => '(values$superscript ${values.sDebug})',
         letValues: (names, values, body) =>
             '(let-values$superscript (${names.zipWith(values).map((n) => '${n.$1.sstring} ${n.$2.sstring}').join(" ")}) ${body.sDebug})',
         begin: (body) => '(begin$superscript ${body.sDebug})',
         and: (exps) => '(and$superscript ${exps.sDebug})',
         or: (exps) => '(or$superscript ${exps.sDebug})',
-        cond: (conds) => '(cond$superscript ${conds.map((c) => c.sDebug).join(" ")})',
+        cond: (conds) =>
+            '(cond$superscript ${conds.map((c) => c.sDebug).join(" ")})',
         undefined: () => '\'undefined$superscript',
         eVoid: () => '(void$superscript)',
         let: (binds, b) =>
@@ -377,7 +407,8 @@ class Body with _$Body {
   Body._();
   factory Body(List<Def> defs, List<Exp> exps) = _Body;
   late final ISet<SName> free = exps
-      .fold(defs.fold(ISet<SName>(), (acc, d) => acc.addAll(d.value.free)), (acc, e) => acc.addAll(e.free))
+      .fold(defs.fold(ISet<SName>(), (acc, d) => acc.addAll(d.value.free)),
+          (acc, e) => acc.addAll(e.free))
       .removeAll(defs.map((d) => d.name).toList());
 }
 
@@ -387,9 +418,11 @@ extension BodyX on Body {
         _ => null,
       };
 
-  String get sstring => "${defs.map((d) => d.sstring).join(' ')} ${exps.sstring}";
+  String get sstring =>
+      "${defs.map((d) => d.sstring).join(' ')} ${exps.sstring}";
 
-  String get sDebug => "${defs.map((d) => d.sDebug).join(' ')} ${exps.map((e) => e.sDebug).join(' ')}";
+  String get sDebug =>
+      "${defs.map((d) => d.sDebug).join(' ')} ${exps.map((e) => e.sDebug).join(' ')}";
 }
 
 abstract interface class IDef {
@@ -421,7 +454,8 @@ extension DefX on Def {
     return when(
         implicit: (value) => value.sstring,
         variable: (name, value) => '(define ${name.sstring} ${value.sstring})',
-        function: (name, formals, body) => '(define ${name.sstring} (lambda (${formals.sstring}) ${body.sstring}))');
+        function: (name, formals, body) =>
+            '(define ${name.sstring} (lambda (${formals.sstring}) ${body.sstring}))');
   }
 
   String get superscript => label.superscript;
@@ -429,7 +463,8 @@ extension DefX on Def {
   String get sDebug {
     return when(
         implicit: (value) => value.sDebug,
-        variable: (name, value) => '(define$superscript ${name.sstring} ${value.sDebug})',
+        variable: (name, value) =>
+            '(define$superscript ${name.sstring} ${value.sDebug})',
         function: (name, formals, body) =>
             '(define$superscript ${name.sstring} (lambda (${formals.sstring}) ${body.sDebug}))');
   }

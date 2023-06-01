@@ -7,3 +7,4 @@ export 'src/scheme/scheme_parser.dart';
 export 'src/scheme/scheme_syntax.dart';
 export 'src/scheme/sexpr.dart';
 export 'src/scheme/sexpr_parser.dart';
+export 'src/scheme/helpers.dart';
