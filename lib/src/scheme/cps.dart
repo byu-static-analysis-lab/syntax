@@ -16,8 +16,7 @@ extension ExpCpsX on Exp {
           final cc = SExpr.genName("cc");
           return k(ULambda(formals.addEnd(cc), body.convertQBody(Ref(cc))));
         }(),
-      Let(bindings: [(final name, final value)], :final body) =>
-        value.convertQExp(KLambda(([name], null), body.convertBody(k))),
+      Let(bindings: [(final name, final value)], :final body) => value.convertQExp(KLambda(([name], null), body.convertBody(k))),
       _ => convertQExp(k.cont)
     }
       ..free;
@@ -49,8 +48,7 @@ extension ExpCpsX on Exp {
           final cc = SExpr.genName("cc");
           return App(q, [ULambda(formals.addEnd(cc), body.convertQBody(Ref(cc)))]);
         }(),
-      Let(bindings: [(final name, final value)], :final body) =>
-        value.convertQExp(KLambda(([name], null), body.convertQBody(q))),
+      Let(bindings: [(final name, final value)], :final body) => value.convertQExp(KLambda(([name], null), body.convertQBody(q))),
       IfExp(:final condition, :final ifTrue, :final ifFalse) =>
         q.letCps((q) => condition.convertExp((cond) => Exp.ifE(cond, ifTrue.convertQExp(q), ifFalse.convertQExp(q)))),
       SetExp(:final name, :final value) => value.convertExp((v) => Seq.of(Exp.setE(name, v), App(q, [Exp.eVoid()]))),

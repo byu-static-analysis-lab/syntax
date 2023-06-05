@@ -26,16 +26,12 @@ Exp parseExpr(SExpr e) {
         null => throw UnimplementedError(),
         final c when c == CSymbols.sQuote => QuoteLit(l[1]).expansion,
         final c when c == CSymbols.sQuasiquote => parseQuasiquote(1, l[1]),
-        final c when c == CSymbols.sLambda || c == CSymbols.sLambday =>
-          Exp.lambda(parseFormals(l[1]), parseBody(l.sublist(2))),
+        final c when c == CSymbols.sLambda || c == CSymbols.sLambday => Exp.lambda(parseFormals(l[1]), parseBody(l.sublist(2))),
         final c when c == CSymbols.sSetBang => Exp.setE(l[1] as SName, parseExpr(l[2])),
         final c when c == CSymbols.sBegin => Exp.begin(parseBody(l.sublist(1))),
-        final c when c == CSymbols.sIfZero => Exp.ifE(
-            Exp.app(Ref(SExpr.nameFrom('eq?')), [parseExpr(l[1]), Exp.selfLit(SExpr.num(0))]),
-            parseExpr(l[2]),
-            l.length == 4 ? parseExpr(l[3]) : Exp.eVoid()),
-        final c when c == CSymbols.sIf =>
-          Exp.ifE(parseExpr(l[1]), parseExpr(l[2]), l.length == 4 ? parseExpr(l[3]) : Exp.eVoid()),
+        final c when c == CSymbols.sIfZero => Exp.ifE(Exp.app(Ref(SExpr.nameFrom('eq?')), [parseExpr(l[1]), Exp.selfLit(SExpr.num(0))]),
+            parseExpr(l[2]), l.length == 4 ? parseExpr(l[3]) : Exp.eVoid()),
+        final c when c == CSymbols.sIf => Exp.ifE(parseExpr(l[1]), parseExpr(l[2]), l.length == 4 ? parseExpr(l[3]) : Exp.eVoid()),
         final c when c == CSymbols.sCond => Cond(l.sublist(1).map(parseCondClause).toList()),
         final c when c == CSymbols.sOr => Exp.or(l.sublist(1).map(parseExpr).toList()),
         final c when c == CSymbols.sAnd => Exp.and(l.sublist(1).map(parseExpr).toList()),
@@ -61,8 +57,7 @@ Exp parseQuasiquote(int depth, SExpr qqexp) {
   return switch (qqexp) {
     SCons(toList: [final c, final s]) when c == CSymbols.sUnquote =>
       depth == 1 ? parseExpr(s) : Exp.list([QuoteLit(c), parseQuasiquote(depth - 1, s)]),
-    SCons(toList: [final c, final s]) when c == CSymbols.sQuasiquote =>
-      Exp.list([QuoteLit(c), parseQuasiquote(depth + 1, s)]),
+    SCons(toList: [final c, final s]) when c == CSymbols.sQuasiquote => Exp.list([QuoteLit(c), parseQuasiquote(depth + 1, s)]),
     SCons(car: SCons(toList: [final c, final exp]), cdr: final tl) when c == CSymbols.sUnquoteSplicing => depth == 1
         ? App(Ref(CSymbols.sAppend), [parseExpr(exp), parseQuasiquote(depth, tl)])
         : Exp.cons(Exp.list([QuoteLit(c), parseQuasiquote(depth - 1, exp)]), parseQuasiquote(depth, tl)),
@@ -112,8 +107,7 @@ CondClause parseCondClause(SExpr s) {
   return switch (s.toList) {
     [final test] => SelfCondClause(parseExpr(test)),
     [final c, ...final exps] when c == CSymbols.sElse => ElseCondClause(exps.map(parseExpr).toList()),
-    [final test, final arrow, final proc] when arrow == CSymbols.sRightArrow =>
-      ProcCondClause(parseExpr(test), parseExpr(proc)),
+    [final test, final arrow, final proc] when arrow == CSymbols.sRightArrow => ProcCondClause(parseExpr(test), parseExpr(proc)),
     [final test, ...final exps] => TestCondClause(parseExpr(test), exps.map(parseExpr).toList()),
     [] => throw UnimplementedError('Invalid empty condition clause'),
   };

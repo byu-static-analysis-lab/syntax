@@ -125,12 +125,9 @@ extension on Exp {
       case ILit() || Undefined() || EVoid():
         return this;
       case IfExp(:final condition, :final ifTrue, :final ifFalse):
-        return IfExp(
-            condition.replace(oldName, newName), ifTrue.replace(oldName, newName), ifFalse.replace(oldName, newName));
+        return IfExp(condition.replace(oldName, newName), ifTrue.replace(oldName, newName), ifFalse.replace(oldName, newName));
       case Lambda(:final formals, :final body):
-        return formals.$1.any((f) => f == oldName) || formals.$2 == oldName
-            ? this
-            : Lambda(formals, body.replace(oldName, newName));
+        return formals.$1.any((f) => f == oldName) || formals.$2 == oldName ? this : Lambda(formals, body.replace(oldName, newName));
       case Begin(:final body):
         return Begin(body.replace(oldName, newName));
       case Let(bindings: [(final name, final value)], :final body):

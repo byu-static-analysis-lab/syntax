@@ -24,15 +24,13 @@ mixin _$Program {
 
 /// @nodoc
 abstract class $ProgramCopyWith<$Res> {
-  factory $ProgramCopyWith(Program value, $Res Function(Program) then) =
-      _$ProgramCopyWithImpl<$Res, Program>;
+  factory $ProgramCopyWith(Program value, $Res Function(Program) then) = _$ProgramCopyWithImpl<$Res, Program>;
   @useResult
   $Res call({List<Def> defs});
 }
 
 /// @nodoc
-class _$ProgramCopyWithImpl<$Res, $Val extends Program>
-    implements $ProgramCopyWith<$Res> {
+class _$ProgramCopyWithImpl<$Res, $Val extends Program> implements $ProgramCopyWith<$Res> {
   _$ProgramCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -56,20 +54,15 @@ class _$ProgramCopyWithImpl<$Res, $Val extends Program>
 
 /// @nodoc
 abstract class _$$_ProgramCopyWith<$Res> implements $ProgramCopyWith<$Res> {
-  factory _$$_ProgramCopyWith(
-          _$_Program value, $Res Function(_$_Program) then) =
-      __$$_ProgramCopyWithImpl<$Res>;
+  factory _$$_ProgramCopyWith(_$_Program value, $Res Function(_$_Program) then) = __$$_ProgramCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Def> defs});
 }
 
 /// @nodoc
-class __$$_ProgramCopyWithImpl<$Res>
-    extends _$ProgramCopyWithImpl<$Res, _$_Program>
-    implements _$$_ProgramCopyWith<$Res> {
-  __$$_ProgramCopyWithImpl(_$_Program _value, $Res Function(_$_Program) _then)
-      : super(_value, _then);
+class __$$_ProgramCopyWithImpl<$Res> extends _$ProgramCopyWithImpl<$Res, _$_Program> implements _$$_ProgramCopyWith<$Res> {
+  __$$_ProgramCopyWithImpl(_$_Program _value, $Res Function(_$_Program) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -103,20 +96,16 @@ class _$_Program extends _Program {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Program &&
-            const DeepCollectionEquality().equals(other._defs, _defs));
+        (other.runtimeType == runtimeType && other is _$_Program && const DeepCollectionEquality().equals(other._defs, _defs));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_defs));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_defs));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProgramCopyWith<_$_Program> get copyWith =>
-      __$$_ProgramCopyWithImpl<_$_Program>(this, _$identity);
+  _$$_ProgramCopyWith<_$_Program> get copyWith => __$$_ProgramCopyWithImpl<_$_Program>(this, _$identity);
 }
 
 abstract class _Program extends Program {
@@ -127,8 +116,7 @@ abstract class _Program extends Program {
   List<Def> get defs;
   @override
   @JsonKey(ignore: true)
-  _$$_ProgramCopyWith<_$_Program> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_ProgramCopyWith<_$_Program> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -145,8 +133,7 @@ mixin _$Exp {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -170,8 +157,7 @@ mixin _$Exp {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -285,8 +271,7 @@ mixin _$Exp {
 
 /// @nodoc
 abstract class $ExpCopyWith<$Res> {
-  factory $ExpCopyWith(Exp value, $Res Function(Exp) then) =
-      _$ExpCopyWithImpl<$Res, Exp>;
+  factory $ExpCopyWith(Exp value, $Res Function(Exp) then) = _$ExpCopyWithImpl<$Res, Exp>;
 }
 
 /// @nodoc
@@ -301,8 +286,7 @@ class _$ExpCopyWithImpl<$Res, $Val extends Exp> implements $ExpCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$SelfLitCopyWith<$Res> {
-  factory _$$SelfLitCopyWith(_$SelfLit value, $Res Function(_$SelfLit) then) =
-      __$$SelfLitCopyWithImpl<$Res>;
+  factory _$$SelfLitCopyWith(_$SelfLit value, $Res Function(_$SelfLit) then) = __$$SelfLitCopyWithImpl<$Res>;
   @useResult
   $Res call({SExpr lit});
 
@@ -310,10 +294,8 @@ abstract class _$$SelfLitCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SelfLitCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$SelfLit>
-    implements _$$SelfLitCopyWith<$Res> {
-  __$$SelfLitCopyWithImpl(_$SelfLit _value, $Res Function(_$SelfLit) _then)
-      : super(_value, _then);
+class __$$SelfLitCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$SelfLit> implements _$$SelfLitCopyWith<$Res> {
+  __$$SelfLitCopyWithImpl(_$SelfLit _value, $Res Function(_$SelfLit) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -353,8 +335,7 @@ class _$SelfLit extends SelfLit {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelfLitCopyWith<_$SelfLit> get copyWith =>
-      __$$SelfLitCopyWithImpl<_$SelfLit>(this, _$identity);
+  _$$SelfLitCopyWith<_$SelfLit> get copyWith => __$$SelfLitCopyWithImpl<_$SelfLit>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -369,8 +350,7 @@ class _$SelfLit extends SelfLit {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -397,8 +377,7 @@ class _$SelfLit extends SelfLit {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -535,15 +514,12 @@ abstract class SelfLit extends Exp implements ILit {
 
   SExpr get lit;
   @JsonKey(ignore: true)
-  _$$SelfLitCopyWith<_$SelfLit> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SelfLitCopyWith<_$SelfLit> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$QuoteLitCopyWith<$Res> {
-  factory _$$QuoteLitCopyWith(
-          _$QuoteLit value, $Res Function(_$QuoteLit) then) =
-      __$$QuoteLitCopyWithImpl<$Res>;
+  factory _$$QuoteLitCopyWith(_$QuoteLit value, $Res Function(_$QuoteLit) then) = __$$QuoteLitCopyWithImpl<$Res>;
   @useResult
   $Res call({SExpr lit});
 
@@ -551,10 +527,8 @@ abstract class _$$QuoteLitCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$QuoteLitCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$QuoteLit>
-    implements _$$QuoteLitCopyWith<$Res> {
-  __$$QuoteLitCopyWithImpl(_$QuoteLit _value, $Res Function(_$QuoteLit) _then)
-      : super(_value, _then);
+class __$$QuoteLitCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$QuoteLit> implements _$$QuoteLitCopyWith<$Res> {
+  __$$QuoteLitCopyWithImpl(_$QuoteLit _value, $Res Function(_$QuoteLit) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -594,8 +568,7 @@ class _$QuoteLit extends QuoteLit {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$QuoteLitCopyWith<_$QuoteLit> get copyWith =>
-      __$$QuoteLitCopyWithImpl<_$QuoteLit>(this, _$identity);
+  _$$QuoteLitCopyWith<_$QuoteLit> get copyWith => __$$QuoteLitCopyWithImpl<_$QuoteLit>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -610,8 +583,7 @@ class _$QuoteLit extends QuoteLit {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -638,8 +610,7 @@ class _$QuoteLit extends QuoteLit {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -776,23 +747,19 @@ abstract class QuoteLit extends Exp implements ILit {
 
   SExpr get lit;
   @JsonKey(ignore: true)
-  _$$QuoteLitCopyWith<_$QuoteLit> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$QuoteLitCopyWith<_$QuoteLit> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$RefCopyWith<$Res> {
-  factory _$$RefCopyWith(_$Ref value, $Res Function(_$Ref) then) =
-      __$$RefCopyWithImpl<$Res>;
+  factory _$$RefCopyWith(_$Ref value, $Res Function(_$Ref) then) = __$$RefCopyWithImpl<$Res>;
   @useResult
   $Res call({SName ref});
 }
 
 /// @nodoc
-class __$$RefCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Ref>
-    implements _$$RefCopyWith<$Res> {
-  __$$RefCopyWithImpl(_$Ref _value, $Res Function(_$Ref) _then)
-      : super(_value, _then);
+class __$$RefCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Ref> implements _$$RefCopyWith<$Res> {
+  __$$RefCopyWithImpl(_$Ref _value, $Res Function(_$Ref) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -824,8 +791,7 @@ class _$Ref extends Ref {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RefCopyWith<_$Ref> get copyWith =>
-      __$$RefCopyWithImpl<_$Ref>(this, _$identity);
+  _$$RefCopyWith<_$Ref> get copyWith => __$$RefCopyWithImpl<_$Ref>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -840,8 +806,7 @@ class _$Ref extends Ref {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -868,8 +833,7 @@ class _$Ref extends Ref {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -1011,8 +975,7 @@ abstract class Ref extends Exp {
 
 /// @nodoc
 abstract class _$$AppCopyWith<$Res> {
-  factory _$$AppCopyWith(_$App value, $Res Function(_$App) then) =
-      __$$AppCopyWithImpl<$Res>;
+  factory _$$AppCopyWith(_$App value, $Res Function(_$App) then) = __$$AppCopyWithImpl<$Res>;
   @useResult
   $Res call({Exp fun, List<Exp> args});
 
@@ -1020,10 +983,8 @@ abstract class _$$AppCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$App>
-    implements _$$AppCopyWith<$Res> {
-  __$$AppCopyWithImpl(_$App _value, $Res Function(_$App) _then)
-      : super(_value, _then);
+class __$$AppCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$App> implements _$$AppCopyWith<$Res> {
+  __$$AppCopyWithImpl(_$App _value, $Res Function(_$App) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1077,8 +1038,7 @@ class _$App extends App {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppCopyWith<_$App> get copyWith =>
-      __$$AppCopyWithImpl<_$App>(this, _$identity);
+  _$$AppCopyWith<_$App> get copyWith => __$$AppCopyWithImpl<_$App>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1093,8 +1053,7 @@ class _$App extends App {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -1121,8 +1080,7 @@ class _$App extends App {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -1265,8 +1223,7 @@ abstract class App extends Exp {
 
 /// @nodoc
 abstract class _$$KLambdaCopyWith<$Res> {
-  factory _$$KLambdaCopyWith(_$KLambda value, $Res Function(_$KLambda) then) =
-      __$$KLambdaCopyWithImpl<$Res>;
+  factory _$$KLambdaCopyWith(_$KLambda value, $Res Function(_$KLambda) then) = __$$KLambdaCopyWithImpl<$Res>;
   @useResult
   $Res call({(List<SExpr>, SExpr?) formals, Body body});
 
@@ -1274,10 +1231,8 @@ abstract class _$$KLambdaCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$KLambdaCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$KLambda>
-    implements _$$KLambdaCopyWith<$Res> {
-  __$$KLambdaCopyWithImpl(_$KLambda _value, $Res Function(_$KLambda) _then)
-      : super(_value, _then);
+class __$$KLambdaCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$KLambda> implements _$$KLambdaCopyWith<$Res> {
+  __$$KLambdaCopyWithImpl(_$KLambda _value, $Res Function(_$KLambda) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1324,8 +1279,7 @@ class _$KLambda extends KLambda {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$KLambdaCopyWith<_$KLambda> get copyWith =>
-      __$$KLambdaCopyWithImpl<_$KLambda>(this, _$identity);
+  _$$KLambdaCopyWith<_$KLambda> get copyWith => __$$KLambdaCopyWithImpl<_$KLambda>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1340,8 +1294,7 @@ class _$KLambda extends KLambda {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -1368,8 +1321,7 @@ class _$KLambda extends KLambda {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -1501,21 +1453,18 @@ class _$KLambda extends KLambda {
 }
 
 abstract class KLambda extends Exp implements ILambda {
-  factory KLambda(final (List<SExpr>, SExpr?) formals, final Body body) =
-      _$KLambda;
+  factory KLambda(final (List<SExpr>, SExpr?) formals, final Body body) = _$KLambda;
   KLambda._() : super._();
 
   (List<SExpr>, SExpr?) get formals;
   Body get body;
   @JsonKey(ignore: true)
-  _$$KLambdaCopyWith<_$KLambda> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$KLambdaCopyWith<_$KLambda> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ULambdaCopyWith<$Res> {
-  factory _$$ULambdaCopyWith(_$ULambda value, $Res Function(_$ULambda) then) =
-      __$$ULambdaCopyWithImpl<$Res>;
+  factory _$$ULambdaCopyWith(_$ULambda value, $Res Function(_$ULambda) then) = __$$ULambdaCopyWithImpl<$Res>;
   @useResult
   $Res call({(List<SExpr>, SExpr?) formals, Body body});
 
@@ -1523,10 +1472,8 @@ abstract class _$$ULambdaCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ULambdaCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$ULambda>
-    implements _$$ULambdaCopyWith<$Res> {
-  __$$ULambdaCopyWithImpl(_$ULambda _value, $Res Function(_$ULambda) _then)
-      : super(_value, _then);
+class __$$ULambdaCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$ULambda> implements _$$ULambdaCopyWith<$Res> {
+  __$$ULambdaCopyWithImpl(_$ULambda _value, $Res Function(_$ULambda) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1573,8 +1520,7 @@ class _$ULambda extends ULambda {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ULambdaCopyWith<_$ULambda> get copyWith =>
-      __$$ULambdaCopyWithImpl<_$ULambda>(this, _$identity);
+  _$$ULambdaCopyWith<_$ULambda> get copyWith => __$$ULambdaCopyWithImpl<_$ULambda>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1589,8 +1535,7 @@ class _$ULambda extends ULambda {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -1617,8 +1562,7 @@ class _$ULambda extends ULambda {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -1750,21 +1694,18 @@ class _$ULambda extends ULambda {
 }
 
 abstract class ULambda extends Exp implements ILambda {
-  factory ULambda(final (List<SExpr>, SExpr?) formals, final Body body) =
-      _$ULambda;
+  factory ULambda(final (List<SExpr>, SExpr?) formals, final Body body) = _$ULambda;
   ULambda._() : super._();
 
   (List<SExpr>, SExpr?) get formals;
   Body get body;
   @JsonKey(ignore: true)
-  _$$ULambdaCopyWith<_$ULambda> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ULambdaCopyWith<_$ULambda> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LambdaCopyWith<$Res> {
-  factory _$$LambdaCopyWith(_$Lambda value, $Res Function(_$Lambda) then) =
-      __$$LambdaCopyWithImpl<$Res>;
+  factory _$$LambdaCopyWith(_$Lambda value, $Res Function(_$Lambda) then) = __$$LambdaCopyWithImpl<$Res>;
   @useResult
   $Res call({(List<SExpr>, SExpr?) formals, Body body});
 
@@ -1772,10 +1713,8 @@ abstract class _$$LambdaCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LambdaCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Lambda>
-    implements _$$LambdaCopyWith<$Res> {
-  __$$LambdaCopyWithImpl(_$Lambda _value, $Res Function(_$Lambda) _then)
-      : super(_value, _then);
+class __$$LambdaCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Lambda> implements _$$LambdaCopyWith<$Res> {
+  __$$LambdaCopyWithImpl(_$Lambda _value, $Res Function(_$Lambda) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1822,8 +1761,7 @@ class _$Lambda extends Lambda {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LambdaCopyWith<_$Lambda> get copyWith =>
-      __$$LambdaCopyWithImpl<_$Lambda>(this, _$identity);
+  _$$LambdaCopyWith<_$Lambda> get copyWith => __$$LambdaCopyWithImpl<_$Lambda>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1838,8 +1776,7 @@ class _$Lambda extends Lambda {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -1866,8 +1803,7 @@ class _$Lambda extends Lambda {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -1999,21 +1935,18 @@ class _$Lambda extends Lambda {
 }
 
 abstract class Lambda extends Exp implements ILambda {
-  factory Lambda(final (List<SExpr>, SExpr?) formals, final Body body) =
-      _$Lambda;
+  factory Lambda(final (List<SExpr>, SExpr?) formals, final Body body) = _$Lambda;
   Lambda._() : super._();
 
   (List<SExpr>, SExpr?) get formals;
   Body get body;
   @JsonKey(ignore: true)
-  _$$LambdaCopyWith<_$Lambda> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LambdaCopyWith<_$Lambda> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$IfExpCopyWith<$Res> {
-  factory _$$IfExpCopyWith(_$IfExp value, $Res Function(_$IfExp) then) =
-      __$$IfExpCopyWithImpl<$Res>;
+  factory _$$IfExpCopyWith(_$IfExp value, $Res Function(_$IfExp) then) = __$$IfExpCopyWithImpl<$Res>;
   @useResult
   $Res call({Exp condition, Exp ifTrue, Exp ifFalse});
 
@@ -2023,10 +1956,8 @@ abstract class _$$IfExpCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$IfExpCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$IfExp>
-    implements _$$IfExpCopyWith<$Res> {
-  __$$IfExpCopyWithImpl(_$IfExp _value, $Res Function(_$IfExp) _then)
-      : super(_value, _then);
+class __$$IfExpCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$IfExp> implements _$$IfExpCopyWith<$Res> {
+  __$$IfExpCopyWithImpl(_$IfExp _value, $Res Function(_$IfExp) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2096,8 +2027,7 @@ class _$IfExp extends IfExp {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$IfExpCopyWith<_$IfExp> get copyWith =>
-      __$$IfExpCopyWithImpl<_$IfExp>(this, _$identity);
+  _$$IfExpCopyWith<_$IfExp> get copyWith => __$$IfExpCopyWithImpl<_$IfExp>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2112,8 +2042,7 @@ class _$IfExp extends IfExp {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -2140,8 +2069,7 @@ class _$IfExp extends IfExp {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -2273,8 +2201,7 @@ class _$IfExp extends IfExp {
 }
 
 abstract class IfExp extends Exp {
-  factory IfExp(final Exp condition, final Exp ifTrue, final Exp ifFalse) =
-      _$IfExp;
+  factory IfExp(final Exp condition, final Exp ifTrue, final Exp ifFalse) = _$IfExp;
   IfExp._() : super._();
 
   Exp get condition;
@@ -2286,8 +2213,7 @@ abstract class IfExp extends Exp {
 
 /// @nodoc
 abstract class _$$SetExpCopyWith<$Res> {
-  factory _$$SetExpCopyWith(_$SetExp value, $Res Function(_$SetExp) then) =
-      __$$SetExpCopyWithImpl<$Res>;
+  factory _$$SetExpCopyWith(_$SetExp value, $Res Function(_$SetExp) then) = __$$SetExpCopyWithImpl<$Res>;
   @useResult
   $Res call({SName name, Exp value});
 
@@ -2295,10 +2221,8 @@ abstract class _$$SetExpCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SetExpCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$SetExp>
-    implements _$$SetExpCopyWith<$Res> {
-  __$$SetExpCopyWithImpl(_$SetExp _value, $Res Function(_$SetExp) _then)
-      : super(_value, _then);
+class __$$SetExpCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$SetExp> implements _$$SetExpCopyWith<$Res> {
+  __$$SetExpCopyWithImpl(_$SetExp _value, $Res Function(_$SetExp) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2345,8 +2269,7 @@ class _$SetExp extends SetExp {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SetExpCopyWith<_$SetExp> get copyWith =>
-      __$$SetExpCopyWithImpl<_$SetExp>(this, _$identity);
+  _$$SetExpCopyWith<_$SetExp> get copyWith => __$$SetExpCopyWithImpl<_$SetExp>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2361,8 +2284,7 @@ class _$SetExp extends SetExp {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -2389,8 +2311,7 @@ class _$SetExp extends SetExp {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -2528,23 +2449,19 @@ abstract class SetExp extends Exp {
   SName get name;
   Exp get value;
   @JsonKey(ignore: true)
-  _$$SetExpCopyWith<_$SetExp> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SetExpCopyWith<_$SetExp> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ValuesCopyWith<$Res> {
-  factory _$$ValuesCopyWith(_$Values value, $Res Function(_$Values) then) =
-      __$$ValuesCopyWithImpl<$Res>;
+  factory _$$ValuesCopyWith(_$Values value, $Res Function(_$Values) then) = __$$ValuesCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Exp> values});
 }
 
 /// @nodoc
-class __$$ValuesCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Values>
-    implements _$$ValuesCopyWith<$Res> {
-  __$$ValuesCopyWithImpl(_$Values _value, $Res Function(_$Values) _then)
-      : super(_value, _then);
+class __$$ValuesCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Values> implements _$$ValuesCopyWith<$Res> {
+  __$$ValuesCopyWithImpl(_$Values _value, $Res Function(_$Values) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2583,8 +2500,7 @@ class _$Values extends Values {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ValuesCopyWith<_$Values> get copyWith =>
-      __$$ValuesCopyWithImpl<_$Values>(this, _$identity);
+  _$$ValuesCopyWith<_$Values> get copyWith => __$$ValuesCopyWithImpl<_$Values>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2599,8 +2515,7 @@ class _$Values extends Values {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -2627,8 +2542,7 @@ class _$Values extends Values {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -2765,15 +2679,12 @@ abstract class Values extends Exp {
 
   List<Exp> get values;
   @JsonKey(ignore: true)
-  _$$ValuesCopyWith<_$Values> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ValuesCopyWith<_$Values> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LetValuesCopyWith<$Res> {
-  factory _$$LetValuesCopyWith(
-          _$LetValues value, $Res Function(_$LetValues) then) =
-      __$$LetValuesCopyWithImpl<$Res>;
+  factory _$$LetValuesCopyWith(_$LetValues value, $Res Function(_$LetValues) then) = __$$LetValuesCopyWithImpl<$Res>;
   @useResult
   $Res call({List<SName> names, List<Exp> values, Body body});
 
@@ -2781,12 +2692,8 @@ abstract class _$$LetValuesCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LetValuesCopyWithImpl<$Res>
-    extends _$ExpCopyWithImpl<$Res, _$LetValues>
-    implements _$$LetValuesCopyWith<$Res> {
-  __$$LetValuesCopyWithImpl(
-      _$LetValues _value, $Res Function(_$LetValues) _then)
-      : super(_value, _then);
+class __$$LetValuesCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$LetValues> implements _$$LetValuesCopyWith<$Res> {
+  __$$LetValuesCopyWithImpl(_$LetValues _value, $Res Function(_$LetValues) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2855,8 +2762,7 @@ class _$LetValues extends LetValues {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LetValuesCopyWith<_$LetValues> get copyWith =>
-      __$$LetValuesCopyWithImpl<_$LetValues>(this, _$identity);
+  _$$LetValuesCopyWith<_$LetValues> get copyWith => __$$LetValuesCopyWithImpl<_$LetValues>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2871,8 +2777,7 @@ class _$LetValues extends LetValues {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -2899,8 +2804,7 @@ class _$LetValues extends LetValues {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -3032,23 +2936,19 @@ class _$LetValues extends LetValues {
 }
 
 abstract class LetValues extends Exp {
-  factory LetValues(
-          final List<SName> names, final List<Exp> values, final Body body) =
-      _$LetValues;
+  factory LetValues(final List<SName> names, final List<Exp> values, final Body body) = _$LetValues;
   LetValues._() : super._();
 
   List<SName> get names;
   List<Exp> get values;
   Body get body;
   @JsonKey(ignore: true)
-  _$$LetValuesCopyWith<_$LetValues> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LetValuesCopyWith<_$LetValues> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$BeginCopyWith<$Res> {
-  factory _$$BeginCopyWith(_$Begin value, $Res Function(_$Begin) then) =
-      __$$BeginCopyWithImpl<$Res>;
+  factory _$$BeginCopyWith(_$Begin value, $Res Function(_$Begin) then) = __$$BeginCopyWithImpl<$Res>;
   @useResult
   $Res call({Body body});
 
@@ -3056,10 +2956,8 @@ abstract class _$$BeginCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$BeginCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Begin>
-    implements _$$BeginCopyWith<$Res> {
-  __$$BeginCopyWithImpl(_$Begin _value, $Res Function(_$Begin) _then)
-      : super(_value, _then);
+class __$$BeginCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Begin> implements _$$BeginCopyWith<$Res> {
+  __$$BeginCopyWithImpl(_$Begin _value, $Res Function(_$Begin) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -3099,8 +2997,7 @@ class _$Begin extends Begin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$BeginCopyWith<_$Begin> get copyWith =>
-      __$$BeginCopyWithImpl<_$Begin>(this, _$identity);
+  _$$BeginCopyWith<_$Begin> get copyWith => __$$BeginCopyWithImpl<_$Begin>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3115,8 +3012,7 @@ class _$Begin extends Begin {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -3143,8 +3039,7 @@ class _$Begin extends Begin {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -3286,17 +3181,14 @@ abstract class Begin extends Exp {
 
 /// @nodoc
 abstract class _$$AndCopyWith<$Res> {
-  factory _$$AndCopyWith(_$And value, $Res Function(_$And) then) =
-      __$$AndCopyWithImpl<$Res>;
+  factory _$$AndCopyWith(_$And value, $Res Function(_$And) then) = __$$AndCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Exp> exps});
 }
 
 /// @nodoc
-class __$$AndCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$And>
-    implements _$$AndCopyWith<$Res> {
-  __$$AndCopyWithImpl(_$And _value, $Res Function(_$And) _then)
-      : super(_value, _then);
+class __$$AndCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$And> implements _$$AndCopyWith<$Res> {
+  __$$AndCopyWithImpl(_$And _value, $Res Function(_$And) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -3335,8 +3227,7 @@ class _$And extends And with StarAndMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AndCopyWith<_$And> get copyWith =>
-      __$$AndCopyWithImpl<_$And>(this, _$identity);
+  _$$AndCopyWith<_$And> get copyWith => __$$AndCopyWithImpl<_$And>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3351,8 +3242,7 @@ class _$And extends And with StarAndMixin {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -3379,8 +3269,7 @@ class _$And extends And with StarAndMixin {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -3522,17 +3411,14 @@ abstract class And extends Exp implements StarExp, StarAndMixin {
 
 /// @nodoc
 abstract class _$$OrCopyWith<$Res> {
-  factory _$$OrCopyWith(_$Or value, $Res Function(_$Or) then) =
-      __$$OrCopyWithImpl<$Res>;
+  factory _$$OrCopyWith(_$Or value, $Res Function(_$Or) then) = __$$OrCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Exp> exps});
 }
 
 /// @nodoc
-class __$$OrCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Or>
-    implements _$$OrCopyWith<$Res> {
-  __$$OrCopyWithImpl(_$Or _value, $Res Function(_$Or) _then)
-      : super(_value, _then);
+class __$$OrCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Or> implements _$$OrCopyWith<$Res> {
+  __$$OrCopyWithImpl(_$Or _value, $Res Function(_$Or) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -3571,8 +3457,7 @@ class _$Or extends Or with StarOrMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$OrCopyWith<_$Or> get copyWith =>
-      __$$OrCopyWithImpl<_$Or>(this, _$identity);
+  _$$OrCopyWith<_$Or> get copyWith => __$$OrCopyWithImpl<_$Or>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3587,8 +3472,7 @@ class _$Or extends Or with StarOrMixin {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -3615,8 +3499,7 @@ class _$Or extends Or with StarOrMixin {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -3758,17 +3641,14 @@ abstract class Or extends Exp implements StarExp, StarOrMixin {
 
 /// @nodoc
 abstract class _$$CondCopyWith<$Res> {
-  factory _$$CondCopyWith(_$Cond value, $Res Function(_$Cond) then) =
-      __$$CondCopyWithImpl<$Res>;
+  factory _$$CondCopyWith(_$Cond value, $Res Function(_$Cond) then) = __$$CondCopyWithImpl<$Res>;
   @useResult
   $Res call({List<CondClause> conds});
 }
 
 /// @nodoc
-class __$$CondCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Cond>
-    implements _$$CondCopyWith<$Res> {
-  __$$CondCopyWithImpl(_$Cond _value, $Res Function(_$Cond) _then)
-      : super(_value, _then);
+class __$$CondCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Cond> implements _$$CondCopyWith<$Res> {
+  __$$CondCopyWithImpl(_$Cond _value, $Res Function(_$Cond) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -3807,8 +3687,7 @@ class _$Cond extends Cond with CondMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CondCopyWith<_$Cond> get copyWith =>
-      __$$CondCopyWithImpl<_$Cond>(this, _$identity);
+  _$$CondCopyWith<_$Cond> get copyWith => __$$CondCopyWithImpl<_$Cond>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3823,8 +3702,7 @@ class _$Cond extends Cond with CondMixin {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -3851,8 +3729,7 @@ class _$Cond extends Cond with CondMixin {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -3994,18 +3871,12 @@ abstract class Cond extends Exp implements ICond, CondMixin {
 
 /// @nodoc
 abstract class _$$UndefinedCopyWith<$Res> {
-  factory _$$UndefinedCopyWith(
-          _$Undefined value, $Res Function(_$Undefined) then) =
-      __$$UndefinedCopyWithImpl<$Res>;
+  factory _$$UndefinedCopyWith(_$Undefined value, $Res Function(_$Undefined) then) = __$$UndefinedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UndefinedCopyWithImpl<$Res>
-    extends _$ExpCopyWithImpl<$Res, _$Undefined>
-    implements _$$UndefinedCopyWith<$Res> {
-  __$$UndefinedCopyWithImpl(
-      _$Undefined _value, $Res Function(_$Undefined) _then)
-      : super(_value, _then);
+class __$$UndefinedCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Undefined> implements _$$UndefinedCopyWith<$Res> {
+  __$$UndefinedCopyWithImpl(_$Undefined _value, $Res Function(_$Undefined) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -4031,8 +3902,7 @@ class _$Undefined extends Undefined {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -4059,8 +3929,7 @@ class _$Undefined extends Undefined {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -4198,15 +4067,12 @@ abstract class Undefined extends Exp {
 
 /// @nodoc
 abstract class _$$EVoidCopyWith<$Res> {
-  factory _$$EVoidCopyWith(_$EVoid value, $Res Function(_$EVoid) then) =
-      __$$EVoidCopyWithImpl<$Res>;
+  factory _$$EVoidCopyWith(_$EVoid value, $Res Function(_$EVoid) then) = __$$EVoidCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EVoidCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$EVoid>
-    implements _$$EVoidCopyWith<$Res> {
-  __$$EVoidCopyWithImpl(_$EVoid _value, $Res Function(_$EVoid) _then)
-      : super(_value, _then);
+class __$$EVoidCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$EVoid> implements _$$EVoidCopyWith<$Res> {
+  __$$EVoidCopyWithImpl(_$EVoid _value, $Res Function(_$EVoid) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -4232,8 +4098,7 @@ class _$EVoid extends EVoid {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -4260,8 +4125,7 @@ class _$EVoid extends EVoid {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -4399,8 +4263,7 @@ abstract class EVoid extends Exp {
 
 /// @nodoc
 abstract class _$$LetCopyWith<$Res> {
-  factory _$$LetCopyWith(_$Let value, $Res Function(_$Let) then) =
-      __$$LetCopyWithImpl<$Res>;
+  factory _$$LetCopyWith(_$Let value, $Res Function(_$Let) then) = __$$LetCopyWithImpl<$Res>;
   @useResult
   $Res call({List<(SName, Exp)> bindings, Body body});
 
@@ -4408,10 +4271,8 @@ abstract class _$$LetCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LetCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Let>
-    implements _$$LetCopyWith<$Res> {
-  __$$LetCopyWithImpl(_$Let _value, $Res Function(_$Let) _then)
-      : super(_value, _then);
+class __$$LetCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Let> implements _$$LetCopyWith<$Res> {
+  __$$LetCopyWithImpl(_$Let _value, $Res Function(_$Let) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4466,8 +4327,7 @@ class _$Let extends Let {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LetCopyWith<_$Let> get copyWith =>
-      __$$LetCopyWithImpl<_$Let>(this, _$identity);
+  _$$LetCopyWith<_$Let> get copyWith => __$$LetCopyWithImpl<_$Let>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4482,8 +4342,7 @@ class _$Let extends Let {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -4510,8 +4369,7 @@ class _$Let extends Let {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -4654,8 +4512,7 @@ abstract class Let extends Exp implements ILetForm {
 
 /// @nodoc
 abstract class _$$LetStarCopyWith<$Res> {
-  factory _$$LetStarCopyWith(_$LetStar value, $Res Function(_$LetStar) then) =
-      __$$LetStarCopyWithImpl<$Res>;
+  factory _$$LetStarCopyWith(_$LetStar value, $Res Function(_$LetStar) then) = __$$LetStarCopyWithImpl<$Res>;
   @useResult
   $Res call({List<(SName, Exp)> bindings, Body body});
 
@@ -4663,10 +4520,8 @@ abstract class _$$LetStarCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LetStarCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$LetStar>
-    implements _$$LetStarCopyWith<$Res> {
-  __$$LetStarCopyWithImpl(_$LetStar _value, $Res Function(_$LetStar) _then)
-      : super(_value, _then);
+class __$$LetStarCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$LetStar> implements _$$LetStarCopyWith<$Res> {
+  __$$LetStarCopyWithImpl(_$LetStar _value, $Res Function(_$LetStar) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4721,8 +4576,7 @@ class _$LetStar extends LetStar with LetStarMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LetStarCopyWith<_$LetStar> get copyWith =>
-      __$$LetStarCopyWithImpl<_$LetStar>(this, _$identity);
+  _$$LetStarCopyWith<_$LetStar> get copyWith => __$$LetStarCopyWithImpl<_$LetStar>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4737,8 +4591,7 @@ class _$LetStar extends LetStar with LetStarMixin {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -4765,8 +4618,7 @@ class _$LetStar extends LetStar with LetStarMixin {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -4898,21 +4750,18 @@ class _$LetStar extends LetStar with LetStarMixin {
 }
 
 abstract class LetStar extends Exp implements ILetForm, LetStarMixin {
-  factory LetStar(final List<(SName, Exp)> bindings, final Body body) =
-      _$LetStar;
+  factory LetStar(final List<(SName, Exp)> bindings, final Body body) = _$LetStar;
   LetStar._() : super._();
 
   List<(SName, Exp)> get bindings;
   Body get body;
   @JsonKey(ignore: true)
-  _$$LetStarCopyWith<_$LetStar> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LetStarCopyWith<_$LetStar> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$LetRecCopyWith<$Res> {
-  factory _$$LetRecCopyWith(_$LetRec value, $Res Function(_$LetRec) then) =
-      __$$LetRecCopyWithImpl<$Res>;
+  factory _$$LetRecCopyWith(_$LetRec value, $Res Function(_$LetRec) then) = __$$LetRecCopyWithImpl<$Res>;
   @useResult
   $Res call({List<(SName, Exp)> bindings, Body body});
 
@@ -4920,10 +4769,8 @@ abstract class _$$LetRecCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LetRecCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$LetRec>
-    implements _$$LetRecCopyWith<$Res> {
-  __$$LetRecCopyWithImpl(_$LetRec _value, $Res Function(_$LetRec) _then)
-      : super(_value, _then);
+class __$$LetRecCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$LetRec> implements _$$LetRecCopyWith<$Res> {
+  __$$LetRecCopyWithImpl(_$LetRec _value, $Res Function(_$LetRec) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -4978,8 +4825,7 @@ class _$LetRec extends LetRec with LetRecMixin {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LetRecCopyWith<_$LetRec> get copyWith =>
-      __$$LetRecCopyWithImpl<_$LetRec>(this, _$identity);
+  _$$LetRecCopyWith<_$LetRec> get copyWith => __$$LetRecCopyWithImpl<_$LetRec>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4994,8 +4840,7 @@ class _$LetRec extends LetRec with LetRecMixin {
     required TResult Function(Exp condition, Exp ifTrue, Exp ifFalse) ifE,
     required TResult Function(SName name, Exp value) setE,
     required TResult Function(List<Exp> values) values,
-    required TResult Function(List<SName> names, List<Exp> values, Body body)
-        letValues,
+    required TResult Function(List<SName> names, List<Exp> values, Body body) letValues,
     required TResult Function(Body body) begin,
     required TResult Function(List<Exp> exps) and,
     required TResult Function(List<Exp> exps) or,
@@ -5022,8 +4867,7 @@ class _$LetRec extends LetRec with LetRecMixin {
     TResult? Function(Exp condition, Exp ifTrue, Exp ifFalse)? ifE,
     TResult? Function(SName name, Exp value)? setE,
     TResult? Function(List<Exp> values)? values,
-    TResult? Function(List<SName> names, List<Exp> values, Body body)?
-        letValues,
+    TResult? Function(List<SName> names, List<Exp> values, Body body)? letValues,
     TResult? Function(Body body)? begin,
     TResult? Function(List<Exp> exps)? and,
     TResult? Function(List<Exp> exps)? or,
@@ -5161,8 +5005,7 @@ abstract class LetRec extends Exp implements ILetForm, LetRecMixin {
   List<(SName, Exp)> get bindings;
   Body get body;
   @JsonKey(ignore: true)
-  _$$LetRecCopyWith<_$LetRec> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LetRecCopyWith<_$LetRec> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5221,14 +5064,11 @@ mixin _$CondClause {
 
 /// @nodoc
 abstract class $CondClauseCopyWith<$Res> {
-  factory $CondClauseCopyWith(
-          CondClause value, $Res Function(CondClause) then) =
-      _$CondClauseCopyWithImpl<$Res, CondClause>;
+  factory $CondClauseCopyWith(CondClause value, $Res Function(CondClause) then) = _$CondClauseCopyWithImpl<$Res, CondClause>;
 }
 
 /// @nodoc
-class _$CondClauseCopyWithImpl<$Res, $Val extends CondClause>
-    implements $CondClauseCopyWith<$Res> {
+class _$CondClauseCopyWithImpl<$Res, $Val extends CondClause> implements $CondClauseCopyWith<$Res> {
   _$CondClauseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5239,9 +5079,7 @@ class _$CondClauseCopyWithImpl<$Res, $Val extends CondClause>
 
 /// @nodoc
 abstract class _$$SelfCondClauseCopyWith<$Res> {
-  factory _$$SelfCondClauseCopyWith(
-          _$SelfCondClause value, $Res Function(_$SelfCondClause) then) =
-      __$$SelfCondClauseCopyWithImpl<$Res>;
+  factory _$$SelfCondClauseCopyWith(_$SelfCondClause value, $Res Function(_$SelfCondClause) then) = __$$SelfCondClauseCopyWithImpl<$Res>;
   @useResult
   $Res call({Exp test});
 
@@ -5249,12 +5087,9 @@ abstract class _$$SelfCondClauseCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SelfCondClauseCopyWithImpl<$Res>
-    extends _$CondClauseCopyWithImpl<$Res, _$SelfCondClause>
+class __$$SelfCondClauseCopyWithImpl<$Res> extends _$CondClauseCopyWithImpl<$Res, _$SelfCondClause>
     implements _$$SelfCondClauseCopyWith<$Res> {
-  __$$SelfCondClauseCopyWithImpl(
-      _$SelfCondClause _value, $Res Function(_$SelfCondClause) _then)
-      : super(_value, _then);
+  __$$SelfCondClauseCopyWithImpl(_$SelfCondClause _value, $Res Function(_$SelfCondClause) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -5294,9 +5129,7 @@ class _$SelfCondClause extends SelfCondClause {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SelfCondClause &&
-            (identical(other.test, test) || other.test == test));
+        (other.runtimeType == runtimeType && other is _$SelfCondClause && (identical(other.test, test) || other.test == test));
   }
 
   @override
@@ -5305,8 +5138,7 @@ class _$SelfCondClause extends SelfCondClause {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SelfCondClauseCopyWith<_$SelfCondClause> get copyWith =>
-      __$$SelfCondClauseCopyWithImpl<_$SelfCondClause>(this, _$identity);
+  _$$SelfCondClauseCopyWith<_$SelfCondClause> get copyWith => __$$SelfCondClauseCopyWithImpl<_$SelfCondClause>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5389,15 +5221,12 @@ abstract class SelfCondClause extends CondClause {
 
   Exp get test;
   @JsonKey(ignore: true)
-  _$$SelfCondClauseCopyWith<_$SelfCondClause> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SelfCondClauseCopyWith<_$SelfCondClause> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$TestCondClauseCopyWith<$Res> {
-  factory _$$TestCondClauseCopyWith(
-          _$TestCondClause value, $Res Function(_$TestCondClause) then) =
-      __$$TestCondClauseCopyWithImpl<$Res>;
+  factory _$$TestCondClauseCopyWith(_$TestCondClause value, $Res Function(_$TestCondClause) then) = __$$TestCondClauseCopyWithImpl<$Res>;
   @useResult
   $Res call({Exp test, List<Exp> exps});
 
@@ -5405,12 +5234,9 @@ abstract class _$$TestCondClauseCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TestCondClauseCopyWithImpl<$Res>
-    extends _$CondClauseCopyWithImpl<$Res, _$TestCondClause>
+class __$$TestCondClauseCopyWithImpl<$Res> extends _$CondClauseCopyWithImpl<$Res, _$TestCondClause>
     implements _$$TestCondClauseCopyWith<$Res> {
-  __$$TestCondClauseCopyWithImpl(
-      _$TestCondClause _value, $Res Function(_$TestCondClause) _then)
-      : super(_value, _then);
+  __$$TestCondClauseCopyWithImpl(_$TestCondClause _value, $Res Function(_$TestCondClause) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -5471,14 +5297,12 @@ class _$TestCondClause extends TestCondClause {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, test, const DeepCollectionEquality().hash(_exps));
+  int get hashCode => Object.hash(runtimeType, test, const DeepCollectionEquality().hash(_exps));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TestCondClauseCopyWith<_$TestCondClause> get copyWith =>
-      __$$TestCondClauseCopyWithImpl<_$TestCondClause>(this, _$identity);
+  _$$TestCondClauseCopyWith<_$TestCondClause> get copyWith => __$$TestCondClauseCopyWithImpl<_$TestCondClause>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5556,22 +5380,18 @@ class _$TestCondClause extends TestCondClause {
 }
 
 abstract class TestCondClause extends CondClause {
-  factory TestCondClause(final Exp test, final List<Exp> exps) =
-      _$TestCondClause;
+  factory TestCondClause(final Exp test, final List<Exp> exps) = _$TestCondClause;
   TestCondClause._() : super._();
 
   Exp get test;
   List<Exp> get exps;
   @JsonKey(ignore: true)
-  _$$TestCondClauseCopyWith<_$TestCondClause> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TestCondClauseCopyWith<_$TestCondClause> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ProcCondClauseCopyWith<$Res> {
-  factory _$$ProcCondClauseCopyWith(
-          _$ProcCondClause value, $Res Function(_$ProcCondClause) then) =
-      __$$ProcCondClauseCopyWithImpl<$Res>;
+  factory _$$ProcCondClauseCopyWith(_$ProcCondClause value, $Res Function(_$ProcCondClause) then) = __$$ProcCondClauseCopyWithImpl<$Res>;
   @useResult
   $Res call({Exp test, Exp proc});
 
@@ -5580,12 +5400,9 @@ abstract class _$$ProcCondClauseCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ProcCondClauseCopyWithImpl<$Res>
-    extends _$CondClauseCopyWithImpl<$Res, _$ProcCondClause>
+class __$$ProcCondClauseCopyWithImpl<$Res> extends _$CondClauseCopyWithImpl<$Res, _$ProcCondClause>
     implements _$$ProcCondClauseCopyWith<$Res> {
-  __$$ProcCondClauseCopyWithImpl(
-      _$ProcCondClause _value, $Res Function(_$ProcCondClause) _then)
-      : super(_value, _then);
+  __$$ProcCondClauseCopyWithImpl(_$ProcCondClause _value, $Res Function(_$ProcCondClause) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -5652,8 +5469,7 @@ class _$ProcCondClause extends ProcCondClause {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProcCondClauseCopyWith<_$ProcCondClause> get copyWith =>
-      __$$ProcCondClauseCopyWithImpl<_$ProcCondClause>(this, _$identity);
+  _$$ProcCondClauseCopyWith<_$ProcCondClause> get copyWith => __$$ProcCondClauseCopyWithImpl<_$ProcCondClause>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5737,26 +5553,20 @@ abstract class ProcCondClause extends CondClause {
   Exp get test;
   Exp get proc;
   @JsonKey(ignore: true)
-  _$$ProcCondClauseCopyWith<_$ProcCondClause> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ProcCondClauseCopyWith<_$ProcCondClause> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$ElseCondClauseCopyWith<$Res> {
-  factory _$$ElseCondClauseCopyWith(
-          _$ElseCondClause value, $Res Function(_$ElseCondClause) then) =
-      __$$ElseCondClauseCopyWithImpl<$Res>;
+  factory _$$ElseCondClauseCopyWith(_$ElseCondClause value, $Res Function(_$ElseCondClause) then) = __$$ElseCondClauseCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Exp> exps});
 }
 
 /// @nodoc
-class __$$ElseCondClauseCopyWithImpl<$Res>
-    extends _$CondClauseCopyWithImpl<$Res, _$ElseCondClause>
+class __$$ElseCondClauseCopyWithImpl<$Res> extends _$CondClauseCopyWithImpl<$Res, _$ElseCondClause>
     implements _$$ElseCondClauseCopyWith<$Res> {
-  __$$ElseCondClauseCopyWithImpl(
-      _$ElseCondClause _value, $Res Function(_$ElseCondClause) _then)
-      : super(_value, _then);
+  __$$ElseCondClauseCopyWithImpl(_$ElseCondClause _value, $Res Function(_$ElseCondClause) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -5795,20 +5605,16 @@ class _$ElseCondClause extends ElseCondClause {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ElseCondClause &&
-            const DeepCollectionEquality().equals(other._exps, _exps));
+        (other.runtimeType == runtimeType && other is _$ElseCondClause && const DeepCollectionEquality().equals(other._exps, _exps));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_exps));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_exps));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ElseCondClauseCopyWith<_$ElseCondClause> get copyWith =>
-      __$$ElseCondClauseCopyWithImpl<_$ElseCondClause>(this, _$identity);
+  _$$ElseCondClauseCopyWith<_$ElseCondClause> get copyWith => __$$ElseCondClauseCopyWithImpl<_$ElseCondClause>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5891,8 +5697,7 @@ abstract class ElseCondClause extends CondClause {
 
   List<Exp> get exps;
   @JsonKey(ignore: true)
-  _$$ElseCondClauseCopyWith<_$ElseCondClause> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ElseCondClauseCopyWith<_$ElseCondClause> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5906,15 +5711,13 @@ mixin _$Body {
 
 /// @nodoc
 abstract class $BodyCopyWith<$Res> {
-  factory $BodyCopyWith(Body value, $Res Function(Body) then) =
-      _$BodyCopyWithImpl<$Res, Body>;
+  factory $BodyCopyWith(Body value, $Res Function(Body) then) = _$BodyCopyWithImpl<$Res, Body>;
   @useResult
   $Res call({List<Def> defs, List<Exp> exps});
 }
 
 /// @nodoc
-class _$BodyCopyWithImpl<$Res, $Val extends Body>
-    implements $BodyCopyWith<$Res> {
+class _$BodyCopyWithImpl<$Res, $Val extends Body> implements $BodyCopyWith<$Res> {
   _$BodyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5943,18 +5746,15 @@ class _$BodyCopyWithImpl<$Res, $Val extends Body>
 
 /// @nodoc
 abstract class _$$_BodyCopyWith<$Res> implements $BodyCopyWith<$Res> {
-  factory _$$_BodyCopyWith(_$_Body value, $Res Function(_$_Body) then) =
-      __$$_BodyCopyWithImpl<$Res>;
+  factory _$$_BodyCopyWith(_$_Body value, $Res Function(_$_Body) then) = __$$_BodyCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({List<Def> defs, List<Exp> exps});
 }
 
 /// @nodoc
-class __$$_BodyCopyWithImpl<$Res> extends _$BodyCopyWithImpl<$Res, _$_Body>
-    implements _$$_BodyCopyWith<$Res> {
-  __$$_BodyCopyWithImpl(_$_Body _value, $Res Function(_$_Body) _then)
-      : super(_value, _then);
+class __$$_BodyCopyWithImpl<$Res> extends _$BodyCopyWithImpl<$Res, _$_Body> implements _$$_BodyCopyWith<$Res> {
+  __$$_BodyCopyWithImpl(_$_Body _value, $Res Function(_$_Body) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -6014,16 +5814,12 @@ class _$_Body extends _Body {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_defs),
-      const DeepCollectionEquality().hash(_exps));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_defs), const DeepCollectionEquality().hash(_exps));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_BodyCopyWith<_$_Body> get copyWith =>
-      __$$_BodyCopyWithImpl<_$_Body>(this, _$identity);
+  _$$_BodyCopyWith<_$_Body> get copyWith => __$$_BodyCopyWithImpl<_$_Body>(this, _$identity);
 }
 
 abstract class _Body extends Body {
@@ -6045,25 +5841,21 @@ mixin _$Def {
   TResult when<TResult extends Object?>({
     required TResult Function(Exp value) implicit,
     required TResult Function(SName name, Exp value) variable,
-    required TResult Function(
-            SName name, (List<SExpr>, SExpr?) formals, Body body)
-        function,
+    required TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body) function,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Exp value)? implicit,
     TResult? Function(SName name, Exp value)? variable,
-    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Exp value)? implicit,
     TResult Function(SName name, Exp value)? variable,
-    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -6093,8 +5885,7 @@ mixin _$Def {
 
 /// @nodoc
 abstract class $DefCopyWith<$Res> {
-  factory $DefCopyWith(Def value, $Res Function(Def) then) =
-      _$DefCopyWithImpl<$Res, Def>;
+  factory $DefCopyWith(Def value, $Res Function(Def) then) = _$DefCopyWithImpl<$Res, Def>;
 }
 
 /// @nodoc
@@ -6109,9 +5900,7 @@ class _$DefCopyWithImpl<$Res, $Val extends Def> implements $DefCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$ImplicitDefCopyWith<$Res> {
-  factory _$$ImplicitDefCopyWith(
-          _$ImplicitDef value, $Res Function(_$ImplicitDef) then) =
-      __$$ImplicitDefCopyWithImpl<$Res>;
+  factory _$$ImplicitDefCopyWith(_$ImplicitDef value, $Res Function(_$ImplicitDef) then) = __$$ImplicitDefCopyWithImpl<$Res>;
   @useResult
   $Res call({Exp value});
 
@@ -6119,12 +5908,8 @@ abstract class _$$ImplicitDefCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ImplicitDefCopyWithImpl<$Res>
-    extends _$DefCopyWithImpl<$Res, _$ImplicitDef>
-    implements _$$ImplicitDefCopyWith<$Res> {
-  __$$ImplicitDefCopyWithImpl(
-      _$ImplicitDef _value, $Res Function(_$ImplicitDef) _then)
-      : super(_value, _then);
+class __$$ImplicitDefCopyWithImpl<$Res> extends _$DefCopyWithImpl<$Res, _$ImplicitDef> implements _$$ImplicitDefCopyWith<$Res> {
+  __$$ImplicitDefCopyWithImpl(_$ImplicitDef _value, $Res Function(_$ImplicitDef) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -6164,9 +5949,7 @@ class _$ImplicitDef extends ImplicitDef with ImpDef {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ImplicitDef &&
-            (identical(other.value, value) || other.value == value));
+        (other.runtimeType == runtimeType && other is _$ImplicitDef && (identical(other.value, value) || other.value == value));
   }
 
   @override
@@ -6175,17 +5958,14 @@ class _$ImplicitDef extends ImplicitDef with ImpDef {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ImplicitDefCopyWith<_$ImplicitDef> get copyWith =>
-      __$$ImplicitDefCopyWithImpl<_$ImplicitDef>(this, _$identity);
+  _$$ImplicitDefCopyWith<_$ImplicitDef> get copyWith => __$$ImplicitDefCopyWithImpl<_$ImplicitDef>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Exp value) implicit,
     required TResult Function(SName name, Exp value) variable,
-    required TResult Function(
-            SName name, (List<SExpr>, SExpr?) formals, Body body)
-        function,
+    required TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body) function,
   }) {
     return implicit(value);
   }
@@ -6195,8 +5975,7 @@ class _$ImplicitDef extends ImplicitDef with ImpDef {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Exp value)? implicit,
     TResult? Function(SName name, Exp value)? variable,
-    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
   }) {
     return implicit?.call(value);
   }
@@ -6206,8 +5985,7 @@ class _$ImplicitDef extends ImplicitDef with ImpDef {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Exp value)? implicit,
     TResult Function(SName name, Exp value)? variable,
-    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
     required TResult orElse(),
   }) {
     if (implicit != null) {
@@ -6257,14 +6035,12 @@ abstract class ImplicitDef extends Def implements ImpDef {
 
   Exp get value;
   @JsonKey(ignore: true)
-  _$$ImplicitDefCopyWith<_$ImplicitDef> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ImplicitDefCopyWith<_$ImplicitDef> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$VarDefCopyWith<$Res> {
-  factory _$$VarDefCopyWith(_$VarDef value, $Res Function(_$VarDef) then) =
-      __$$VarDefCopyWithImpl<$Res>;
+  factory _$$VarDefCopyWith(_$VarDef value, $Res Function(_$VarDef) then) = __$$VarDefCopyWithImpl<$Res>;
   @useResult
   $Res call({SName name, Exp value});
 
@@ -6272,10 +6048,8 @@ abstract class _$$VarDefCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$VarDefCopyWithImpl<$Res> extends _$DefCopyWithImpl<$Res, _$VarDef>
-    implements _$$VarDefCopyWith<$Res> {
-  __$$VarDefCopyWithImpl(_$VarDef _value, $Res Function(_$VarDef) _then)
-      : super(_value, _then);
+class __$$VarDefCopyWithImpl<$Res> extends _$DefCopyWithImpl<$Res, _$VarDef> implements _$$VarDefCopyWith<$Res> {
+  __$$VarDefCopyWithImpl(_$VarDef _value, $Res Function(_$VarDef) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -6329,23 +6103,19 @@ class _$VarDef extends VarDef {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(name), value);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(name), value);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$VarDefCopyWith<_$VarDef> get copyWith =>
-      __$$VarDefCopyWithImpl<_$VarDef>(this, _$identity);
+  _$$VarDefCopyWith<_$VarDef> get copyWith => __$$VarDefCopyWithImpl<_$VarDef>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Exp value) implicit,
     required TResult Function(SName name, Exp value) variable,
-    required TResult Function(
-            SName name, (List<SExpr>, SExpr?) formals, Body body)
-        function,
+    required TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body) function,
   }) {
     return variable(name, value);
   }
@@ -6355,8 +6125,7 @@ class _$VarDef extends VarDef {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Exp value)? implicit,
     TResult? Function(SName name, Exp value)? variable,
-    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
   }) {
     return variable?.call(name, value);
   }
@@ -6366,8 +6135,7 @@ class _$VarDef extends VarDef {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Exp value)? implicit,
     TResult Function(SName name, Exp value)? variable,
-    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
     required TResult orElse(),
   }) {
     if (variable != null) {
@@ -6418,15 +6186,12 @@ abstract class VarDef extends Def {
   SName get name;
   Exp get value;
   @JsonKey(ignore: true)
-  _$$VarDefCopyWith<_$VarDef> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$VarDefCopyWith<_$VarDef> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$FunctionDefCopyWith<$Res> {
-  factory _$$FunctionDefCopyWith(
-          _$FunctionDef value, $Res Function(_$FunctionDef) then) =
-      __$$FunctionDefCopyWithImpl<$Res>;
+  factory _$$FunctionDefCopyWith(_$FunctionDef value, $Res Function(_$FunctionDef) then) = __$$FunctionDefCopyWithImpl<$Res>;
   @useResult
   $Res call({SName name, (List<SExpr>, SExpr?) formals, Body body});
 
@@ -6434,12 +6199,8 @@ abstract class _$$FunctionDefCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$FunctionDefCopyWithImpl<$Res>
-    extends _$DefCopyWithImpl<$Res, _$FunctionDef>
-    implements _$$FunctionDefCopyWith<$Res> {
-  __$$FunctionDefCopyWithImpl(
-      _$FunctionDef _value, $Res Function(_$FunctionDef) _then)
-      : super(_value, _then);
+class __$$FunctionDefCopyWithImpl<$Res> extends _$DefCopyWithImpl<$Res, _$FunctionDef> implements _$$FunctionDefCopyWith<$Res> {
+  __$$FunctionDefCopyWithImpl(_$FunctionDef _value, $Res Function(_$FunctionDef) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -6501,23 +6262,19 @@ class _$FunctionDef extends FunctionDef {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(name), formals, body);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(name), formals, body);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$FunctionDefCopyWith<_$FunctionDef> get copyWith =>
-      __$$FunctionDefCopyWithImpl<_$FunctionDef>(this, _$identity);
+  _$$FunctionDefCopyWith<_$FunctionDef> get copyWith => __$$FunctionDefCopyWithImpl<_$FunctionDef>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Exp value) implicit,
     required TResult Function(SName name, Exp value) variable,
-    required TResult Function(
-            SName name, (List<SExpr>, SExpr?) formals, Body body)
-        function,
+    required TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body) function,
   }) {
     return function(name, formals, body);
   }
@@ -6527,8 +6284,7 @@ class _$FunctionDef extends FunctionDef {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(Exp value)? implicit,
     TResult? Function(SName name, Exp value)? variable,
-    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult? Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
   }) {
     return function?.call(name, formals, body);
   }
@@ -6538,8 +6294,7 @@ class _$FunctionDef extends FunctionDef {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Exp value)? implicit,
     TResult Function(SName name, Exp value)? variable,
-    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)?
-        function,
+    TResult Function(SName name, (List<SExpr>, SExpr?) formals, Body body)? function,
     required TResult orElse(),
   }) {
     if (function != null) {
@@ -6584,14 +6339,12 @@ class _$FunctionDef extends FunctionDef {
 }
 
 abstract class FunctionDef extends Def {
-  factory FunctionDef(final SName name, final (List<SExpr>, SExpr?) formals,
-      final Body body) = _$FunctionDef;
+  factory FunctionDef(final SName name, final (List<SExpr>, SExpr?) formals, final Body body) = _$FunctionDef;
   FunctionDef._() : super._();
 
   SName get name;
   (List<SExpr>, SExpr?) get formals;
   Body get body;
   @JsonKey(ignore: true)
-  _$$FunctionDefCopyWith<_$FunctionDef> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FunctionDefCopyWith<_$FunctionDef> get copyWith => throw _privateConstructorUsedError;
 }

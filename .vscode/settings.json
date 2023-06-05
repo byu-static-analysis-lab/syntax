@@ -4,11 +4,12 @@
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
     "editor.rulers": [
-      80
+      140
     ],
     "editor.codeActionsOnSave": {
       "source.organizeImports": true,
       "source.fixAll": true,
     }
-  }
+  },
+  "dart.lineLength": 140
 }

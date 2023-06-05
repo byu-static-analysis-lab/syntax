@@ -88,13 +88,11 @@ mixin _$SExpr {
 
 /// @nodoc
 abstract class $SExprCopyWith<$Res> {
-  factory $SExprCopyWith(SExpr value, $Res Function(SExpr) then) =
-      _$SExprCopyWithImpl<$Res, SExpr>;
+  factory $SExprCopyWith(SExpr value, $Res Function(SExpr) then) = _$SExprCopyWithImpl<$Res, SExpr>;
 }
 
 /// @nodoc
-class _$SExprCopyWithImpl<$Res, $Val extends SExpr>
-    implements $SExprCopyWith<$Res> {
+class _$SExprCopyWithImpl<$Res, $Val extends SExpr> implements $SExprCopyWith<$Res> {
   _$SExprCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -105,8 +103,7 @@ class _$SExprCopyWithImpl<$Res, $Val extends SExpr>
 
 /// @nodoc
 abstract class _$$SConsCopyWith<$Res> {
-  factory _$$SConsCopyWith(_$SCons value, $Res Function(_$SCons) then) =
-      __$$SConsCopyWithImpl<$Res>;
+  factory _$$SConsCopyWith(_$SCons value, $Res Function(_$SCons) then) = __$$SConsCopyWithImpl<$Res>;
   @useResult
   $Res call({SExpr car, SExpr cdr});
 
@@ -115,10 +112,8 @@ abstract class _$$SConsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SConsCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SCons>
-    implements _$$SConsCopyWith<$Res> {
-  __$$SConsCopyWithImpl(_$SCons _value, $Res Function(_$SCons) _then)
-      : super(_value, _then);
+class __$$SConsCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SCons> implements _$$SConsCopyWith<$Res> {
+  __$$SConsCopyWithImpl(_$SCons _value, $Res Function(_$SCons) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -185,8 +180,7 @@ class _$SCons extends SCons {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SConsCopyWith<_$SCons> get copyWith =>
-      __$$SConsCopyWithImpl<_$SCons>(this, _$identity);
+  _$$SConsCopyWith<_$SCons> get copyWith => __$$SConsCopyWithImpl<_$SCons>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -293,17 +287,14 @@ abstract class SCons extends SExpr {
 
 /// @nodoc
 abstract class _$$SNameCopyWith<$Res> {
-  factory _$$SNameCopyWith(_$SName value, $Res Function(_$SName) then) =
-      __$$SNameCopyWithImpl<$Res>;
+  factory _$$SNameCopyWith(_$SName value, $Res Function(_$SName) then) = __$$SNameCopyWithImpl<$Res>;
   @useResult
   $Res call({String name, int version});
 }
 
 /// @nodoc
-class __$$SNameCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SName>
-    implements _$$SNameCopyWith<$Res> {
-  __$$SNameCopyWithImpl(_$SName _value, $Res Function(_$SName) _then)
-      : super(_value, _then);
+class __$$SNameCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SName> implements _$$SNameCopyWith<$Res> {
+  __$$SNameCopyWithImpl(_$SName _value, $Res Function(_$SName) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -354,8 +345,7 @@ class _$SName extends SName {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SNameCopyWith<_$SName> get copyWith =>
-      __$$SNameCopyWithImpl<_$SName>(this, _$identity);
+  _$$SNameCopyWith<_$SName> get copyWith => __$$SNameCopyWithImpl<_$SName>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -462,17 +452,14 @@ abstract class SName extends SExpr {
 
 /// @nodoc
 abstract class _$$SNumCopyWith<$Res> {
-  factory _$$SNumCopyWith(_$SNum value, $Res Function(_$SNum) then) =
-      __$$SNumCopyWithImpl<$Res>;
+  factory _$$SNumCopyWith(_$SNum value, $Res Function(_$SNum) then) = __$$SNumCopyWithImpl<$Res>;
   @useResult
   $Res call({num n});
 }
 
 /// @nodoc
-class __$$SNumCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNum>
-    implements _$$SNumCopyWith<$Res> {
-  __$$SNumCopyWithImpl(_$SNum _value, $Res Function(_$SNum) _then)
-      : super(_value, _then);
+class __$$SNumCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNum> implements _$$SNumCopyWith<$Res> {
+  __$$SNumCopyWithImpl(_$SNum _value, $Res Function(_$SNum) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -503,10 +490,7 @@ class _$SNum extends SNum {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SNum &&
-            (identical(other.n, n) || other.n == n));
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SNum && (identical(other.n, n) || other.n == n));
   }
 
   @override
@@ -515,8 +499,7 @@ class _$SNum extends SNum {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SNumCopyWith<_$SNum> get copyWith =>
-      __$$SNumCopyWithImpl<_$SNum>(this, _$identity);
+  _$$SNumCopyWith<_$SNum> get copyWith => __$$SNumCopyWithImpl<_$SNum>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -622,17 +605,14 @@ abstract class SNum extends SExpr {
 
 /// @nodoc
 abstract class _$$SBoolCopyWith<$Res> {
-  factory _$$SBoolCopyWith(_$SBool value, $Res Function(_$SBool) then) =
-      __$$SBoolCopyWithImpl<$Res>;
+  factory _$$SBoolCopyWith(_$SBool value, $Res Function(_$SBool) then) = __$$SBoolCopyWithImpl<$Res>;
   @useResult
   $Res call({bool b});
 }
 
 /// @nodoc
-class __$$SBoolCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SBool>
-    implements _$$SBoolCopyWith<$Res> {
-  __$$SBoolCopyWithImpl(_$SBool _value, $Res Function(_$SBool) _then)
-      : super(_value, _then);
+class __$$SBoolCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SBool> implements _$$SBoolCopyWith<$Res> {
+  __$$SBoolCopyWithImpl(_$SBool _value, $Res Function(_$SBool) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -663,10 +643,7 @@ class _$SBool extends SBool {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SBool &&
-            (identical(other.b, b) || other.b == b));
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SBool && (identical(other.b, b) || other.b == b));
   }
 
   @override
@@ -675,8 +652,7 @@ class _$SBool extends SBool {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SBoolCopyWith<_$SBool> get copyWith =>
-      __$$SBoolCopyWithImpl<_$SBool>(this, _$identity);
+  _$$SBoolCopyWith<_$SBool> get copyWith => __$$SBoolCopyWithImpl<_$SBool>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -782,17 +758,14 @@ abstract class SBool extends SExpr {
 
 /// @nodoc
 abstract class _$$SStringCopyWith<$Res> {
-  factory _$$SStringCopyWith(_$SString value, $Res Function(_$SString) then) =
-      __$$SStringCopyWithImpl<$Res>;
+  factory _$$SStringCopyWith(_$SString value, $Res Function(_$SString) then) = __$$SStringCopyWithImpl<$Res>;
   @useResult
   $Res call({String s});
 }
 
 /// @nodoc
-class __$$SStringCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SString>
-    implements _$$SStringCopyWith<$Res> {
-  __$$SStringCopyWithImpl(_$SString _value, $Res Function(_$SString) _then)
-      : super(_value, _then);
+class __$$SStringCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SString> implements _$$SStringCopyWith<$Res> {
+  __$$SStringCopyWithImpl(_$SString _value, $Res Function(_$SString) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -823,10 +796,7 @@ class _$SString extends SString {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SString &&
-            (identical(other.s, s) || other.s == s));
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SString && (identical(other.s, s) || other.s == s));
   }
 
   @override
@@ -835,8 +805,7 @@ class _$SString extends SString {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SStringCopyWith<_$SString> get copyWith =>
-      __$$SStringCopyWithImpl<_$SString>(this, _$identity);
+  _$$SStringCopyWith<_$SString> get copyWith => __$$SStringCopyWithImpl<_$SString>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -937,23 +906,19 @@ abstract class SString extends SExpr {
 
   String get s;
   @JsonKey(ignore: true)
-  _$$SStringCopyWith<_$SString> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SStringCopyWith<_$SString> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SCharCopyWith<$Res> {
-  factory _$$SCharCopyWith(_$SChar value, $Res Function(_$SChar) then) =
-      __$$SCharCopyWithImpl<$Res>;
+  factory _$$SCharCopyWith(_$SChar value, $Res Function(_$SChar) then) = __$$SCharCopyWithImpl<$Res>;
   @useResult
   $Res call({String s});
 }
 
 /// @nodoc
-class __$$SCharCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SChar>
-    implements _$$SCharCopyWith<$Res> {
-  __$$SCharCopyWithImpl(_$SChar _value, $Res Function(_$SChar) _then)
-      : super(_value, _then);
+class __$$SCharCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SChar> implements _$$SCharCopyWith<$Res> {
+  __$$SCharCopyWithImpl(_$SChar _value, $Res Function(_$SChar) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -984,10 +949,7 @@ class _$SChar extends SChar {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SChar &&
-            (identical(other.s, s) || other.s == s));
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SChar && (identical(other.s, s) || other.s == s));
   }
 
   @override
@@ -996,8 +958,7 @@ class _$SChar extends SChar {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SCharCopyWith<_$SChar> get copyWith =>
-      __$$SCharCopyWithImpl<_$SChar>(this, _$identity);
+  _$$SCharCopyWith<_$SChar> get copyWith => __$$SCharCopyWithImpl<_$SChar>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1103,15 +1064,12 @@ abstract class SChar extends SExpr {
 
 /// @nodoc
 abstract class _$$SNilCopyWith<$Res> {
-  factory _$$SNilCopyWith(_$SNil value, $Res Function(_$SNil) then) =
-      __$$SNilCopyWithImpl<$Res>;
+  factory _$$SNilCopyWith(_$SNil value, $Res Function(_$SNil) then) = __$$SNilCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SNilCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNil>
-    implements _$$SNilCopyWith<$Res> {
-  __$$SNilCopyWithImpl(_$SNil _value, $Res Function(_$SNil) _then)
-      : super(_value, _then);
+class __$$SNilCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNil> implements _$$SNilCopyWith<$Res> {
+  __$$SNilCopyWithImpl(_$SNil _value, $Res Function(_$SNil) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -1126,8 +1084,7 @@ class _$SNil extends SNil {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SNil);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SNil);
   }
 
   @override

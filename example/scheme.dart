@@ -48,8 +48,7 @@ void main() {
   ];
   print(programs.map((p) => schemeParser.parse(p).isSuccess));
   // print(schemeParser.parse(programs.last).value);
-  final otherPrograms =
-      Directory('../../scheme/').listSync(recursive: true).whereType<File>().map((f) => (f, f.readAsStringSync()));
+  final otherPrograms = Directory('../../scheme/').listSync(recursive: true).whereType<File>().map((f) => (f, f.readAsStringSync()));
   for (final p in otherPrograms) {
     print(path.basename(p.$1.path));
     final result = schemeParser.parse(p.$2);

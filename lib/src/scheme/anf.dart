@@ -14,8 +14,7 @@ extension AnfBodyX on Body {
     final normDefs = defs.map((d) => d.normalize).toList();
     return switch (exps.reversed.toList()) {
       [final exp] => Body(normDefs, [exp.normalizeExp(k)]),
-      [final last, ...final front] =>
-        Body(normDefs, [...front.map((x) => x.normalize).toList().reversed, last.normalizeExp(k)]),
+      [final last, ...final front] => Body(normDefs, [...front.map((x) => x.normalize).toList().reversed, last.normalizeExp(k)]),
       [] => throw UnimplementedError(),
     };
   }
@@ -60,21 +59,18 @@ extension AnfExpX on Exp {
         Or(toIf: final i) => i.normalizeExp(k),
         And(toIf: final i) => i.normalizeExp(k),
         Let(bindings: [], :final body) => Begin(body.normalizeBody(k)),
-        Let(bindings: [(final name, final value)], :final body) =>
-          value.normalizeExp((v) => Exp.let([(name, v)], body.normalizeBody(k))),
+        Let(bindings: [(final name, final value)], :final body) => value.normalizeExp((v) => Exp.let([(name, v)], body.normalizeBody(k))),
         Let(toLetStar: final lets) => lets.normalizeExp(k),
         LetStar(toLets: final lets) => lets.normalizeExp(k),
         SetExp(:final name, :final value) => value.normalizeLinearName((v) => Seq.of(Exp.setE(name, v), k(EVoid()))),
         Begin(body: Body(defs: [], exps: [final exp])) => exp.normalizeExp(k),
-        Begin(body: Body(defs: [], exps: [final hd, ...final tl])) =>
-          Seq.of(hd.normalize, Begin(Body([], tl)).normalizeExp(k)),
+        Begin(body: Body(defs: [], exps: [final hd, ...final tl])) => Seq.of(hd.normalize, Begin(Body([], tl)).normalizeExp(k)),
         Begin(:final body) => body.toLetRec.normalizeExp(k),
         LetRec(toLetsAndSets: final las) => las.normalizeExp(k),
         App(fun: Ref(:final ref), args: SNil()) when ref == CSymbols.sListSym => QuoteLit(SNil()),
         App(fun: Ref(:final ref), args: [final hd, ...final tl]) when ref == CSymbols.sListSym =>
           Exp.cons(hd, Exp.list(tl)).normalizeExp(k),
-        App(:final fun, :final args) =>
-          fun.normalizeLinearName((f) => args.normalizeArguments((a) => k(Exp.app(f, a)))),
+        App(:final fun, :final args) => fun.normalizeLinearName((f) => args.normalizeArguments((a) => k(Exp.app(f, a)))),
         _ => throw UnimplementedError(),
       }
         ..free;
@@ -94,8 +90,7 @@ extension AnfListExpX on List<Exp> {
 extension AnfCondClauseX on List<CondClause> {
   Exp get toIf => switch (this) {
         [SelfCondClause(:final test), ...final conds] => test.let((v) => Exp.ifE(v, v, conds.toIf)),
-        [TestCondClause(:final test, :final exps), ...final conds] =>
-          Exp.ifE(test, Exp.begin(Body([], exps)), conds.toIf),
+        [TestCondClause(:final test, :final exps), ...final conds] => Exp.ifE(test, Exp.begin(Body([], exps)), conds.toIf),
         [ElseCondClause(:final exps)] => Begin(Body([], exps)),
         [] => Exp.eVoid(),
         _ => throw UnimplementedError(),

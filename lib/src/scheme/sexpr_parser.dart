@@ -42,9 +42,7 @@ class SchemeGrammarDefinition extends GrammarDefinition {
           char('0').or(digit().plus()) &
           char('.').seq(digit().plus()).optional() &
           anyOf('eE').seq(anyOf('-+').optional()).seq(digit().plus()).optional()) |
-      (anyOf('-+').optional() &
-          char('.').seq(digit().plus()) &
-          anyOf('eE').seq(anyOf('-+').optional()).seq(digit().plus()).optional());
+      (anyOf('-+').optional() & char('.').seq(digit().plus()) & anyOf('eE').seq(anyOf('-+').optional()).seq(digit().plus()).optional());
 
   Parser string() => ref2(bracket, '""', ref0(character).star().flatten());
   Parser character() => ref0(characterEscape) | ref0(characterRaw);
@@ -53,14 +51,11 @@ class SchemeGrammarDefinition extends GrammarDefinition {
   Parser schar() => (p.string(r'#\') & PatternParser(RegExp("[^\\r\\n\\t) ]+"), 'Character')).pick(1).flatten();
 
   Parser keyword() => ref0(keywordToken).flatten('Keyword expected');
-  Parser keywordToken() =>
-      (PatternParser(RegExp("([#][:][^; \\t\\r\\n()',`\"]+)"), "")).flatten().map((s) => s.substring(2));
+  Parser keywordToken() => (PatternParser(RegExp("([#][:][^; \\t\\r\\n()',`\"]+)"), "")).flatten().map((s) => s.substring(2));
 
   Parser symbol() => ref0(symbolToken).flatten('Symbol expected');
   Parser symbolToken() =>
-      (pattern('a-zA-Z!#\$%&*/:<=>?@\\^_|~+-') & pattern('a-zA-Z0-9!#\$%&*/:<=>?@\\^_|~+-.').star()) |
-      p.string('λ') |
-      p.string('...');
+      (pattern('a-zA-Z!#\$%&*/:<=>?@\\^_|~+-') & pattern('a-zA-Z0-9!#\$%&*/:<=>?@\\^_|~+-.').star()) | p.string('λ') | p.string('...');
   Parser sbool() => (p.string('#') & (p.string('t') | p.string('f'))).flatten();
 
   Parser quote() => char("'") & ref0(atom);
@@ -103,8 +98,7 @@ class SchemeParserDefinition extends SchemeGrammarDefinition {
   @override
   Parser<SExpr> quasiquote() => super.quasiquote().map((each) => SExpr.list([CSymbols.sQuasiquote, each[1]]));
   @override
-  Parser<SExpr> unquoteSplicing() =>
-      super.unquoteSplicing().map((each) => SExpr.list([CSymbols.sUnquoteSplicing, each[1]]));
+  Parser<SExpr> unquoteSplicing() => super.unquoteSplicing().map((each) => SExpr.list([CSymbols.sUnquoteSplicing, each[1]]));
 
   @override
   Parser<SExpr> string() => super.string().map((each) => (each[1] as String).sexpr);
