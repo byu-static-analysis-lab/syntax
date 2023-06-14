@@ -881,10 +881,10 @@ class __$$RefCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$Ref>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ref = null,
+    Object? ref = freezed,
   }) {
     return _then(_$Ref(
-      null == ref
+      freezed == ref
           ? _value.ref
           : ref // ignore: cast_nullable_to_non_nullable
               as SName,
@@ -2485,11 +2485,11 @@ class __$$SetExpCopyWithImpl<$Res> extends _$ExpCopyWithImpl<$Res, _$SetExp>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? value = null,
   }) {
     return _then(_$SetExp(
-      null == name
+      freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as SName,
@@ -6797,11 +6797,11 @@ class __$$VarDefCopyWithImpl<$Res> extends _$DefCopyWithImpl<$Res, _$VarDef>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? value = null,
   }) {
     return _then(_$VarDef(
-      null == name
+      freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as SName,
@@ -6849,13 +6849,14 @@ class _$VarDef extends VarDef {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VarDef &&
-            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, value);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(name), value);
 
   @JsonKey(ignore: true)
   @override
@@ -6978,12 +6979,12 @@ class __$$FunctionDefCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? formals = null,
     Object? body = null,
   }) {
     return _then(_$FunctionDef(
-      null == name
+      freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as SName,
@@ -7037,14 +7038,15 @@ class _$FunctionDef extends FunctionDef {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FunctionDef &&
-            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             (identical(other.formals, formals) || other.formals == formals) &&
             (identical(other.body, body) || other.body == body));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, formals, body);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(name), formals, body);
 
   @JsonKey(ignore: true)
   @override

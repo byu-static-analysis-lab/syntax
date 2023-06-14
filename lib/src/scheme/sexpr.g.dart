@@ -13,8 +13,8 @@ _$SCons _$$SConsFromJson(Map<String, dynamic> json) => _$SCons(
     );
 
 Map<String, dynamic> _$$SConsToJson(_$SCons instance) => <String, dynamic>{
-      'car': instance.car,
-      'cdr': instance.cdr,
+      'car': instance.car.toJson(),
+      'cdr': instance.cdr.toJson(),
       'runtimeType': instance.$type,
     };
 

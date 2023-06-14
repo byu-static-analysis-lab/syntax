@@ -12,7 +12,7 @@ _$SelfLit _$$SelfLitFromJson(Map<String, dynamic> json) => _$SelfLit(
     );
 
 Map<String, dynamic> _$$SelfLitToJson(_$SelfLit instance) => <String, dynamic>{
-      'lit': instance.lit,
+      'lit': instance.lit.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -23,7 +23,7 @@ _$QuoteLit _$$QuoteLitFromJson(Map<String, dynamic> json) => _$QuoteLit(
 
 Map<String, dynamic> _$$QuoteLitToJson(_$QuoteLit instance) =>
     <String, dynamic>{
-      'lit': instance.lit,
+      'lit': instance.lit.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -33,7 +33,7 @@ _$Ref _$$RefFromJson(Map<String, dynamic> json) => _$Ref(
     );
 
 Map<String, dynamic> _$$RefToJson(_$Ref instance) => <String, dynamic>{
-      'ref': instance.ref,
+      'ref': instance.ref.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -46,8 +46,8 @@ _$App _$$AppFromJson(Map<String, dynamic> json) => _$App(
     );
 
 Map<String, dynamic> _$$AppToJson(_$App instance) => <String, dynamic>{
-      'fun': instance.fun,
-      'args': instance.args,
+      'fun': instance.fun.toJson(),
+      'args': instance.args.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -69,10 +69,10 @@ _$KLambda _$$KLambdaFromJson(Map<String, dynamic> json) => _$KLambda(
 
 Map<String, dynamic> _$$KLambdaToJson(_$KLambda instance) => <String, dynamic>{
       'formals': {
-        r'$1': instance.formals.$1,
-        r'$2': instance.formals.$2,
+        r'$1': instance.formals.$1.map((e) => e.toJson()).toList(),
+        r'$2': instance.formals.$2?.toJson(),
       },
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -100,10 +100,10 @@ _$ULambda _$$ULambdaFromJson(Map<String, dynamic> json) => _$ULambda(
 
 Map<String, dynamic> _$$ULambdaToJson(_$ULambda instance) => <String, dynamic>{
       'formals': {
-        r'$1': instance.formals.$1,
-        r'$2': instance.formals.$2,
+        r'$1': instance.formals.$1.map((e) => e.toJson()).toList(),
+        r'$2': instance.formals.$2?.toJson(),
       },
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -125,10 +125,10 @@ _$Lambda _$$LambdaFromJson(Map<String, dynamic> json) => _$Lambda(
 
 Map<String, dynamic> _$$LambdaToJson(_$Lambda instance) => <String, dynamic>{
       'formals': {
-        r'$1': instance.formals.$1,
-        r'$2': instance.formals.$2,
+        r'$1': instance.formals.$1.map((e) => e.toJson()).toList(),
+        r'$2': instance.formals.$2?.toJson(),
       },
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -140,9 +140,9 @@ _$IfExp _$$IfExpFromJson(Map<String, dynamic> json) => _$IfExp(
     );
 
 Map<String, dynamic> _$$IfExpToJson(_$IfExp instance) => <String, dynamic>{
-      'condition': instance.condition,
-      'ifTrue': instance.ifTrue,
-      'ifFalse': instance.ifFalse,
+      'condition': instance.condition.toJson(),
+      'ifTrue': instance.ifTrue.toJson(),
+      'ifFalse': instance.ifFalse.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -153,8 +153,8 @@ _$SetExp _$$SetExpFromJson(Map<String, dynamic> json) => _$SetExp(
     );
 
 Map<String, dynamic> _$$SetExpToJson(_$SetExp instance) => <String, dynamic>{
-      'name': instance.name,
-      'value': instance.value,
+      'name': instance.name.toJson(),
+      'value': instance.value.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -166,7 +166,7 @@ _$Values _$$ValuesFromJson(Map<String, dynamic> json) => _$Values(
     );
 
 Map<String, dynamic> _$$ValuesToJson(_$Values instance) => <String, dynamic>{
-      'values': instance.values,
+      'values': instance.values.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -183,9 +183,9 @@ _$LetValues _$$LetValuesFromJson(Map<String, dynamic> json) => _$LetValues(
 
 Map<String, dynamic> _$$LetValuesToJson(_$LetValues instance) =>
     <String, dynamic>{
-      'names': instance.names,
-      'values': instance.values,
-      'body': instance.body,
+      'names': instance.names.map((e) => e.toJson()).toList(),
+      'values': instance.values.map((e) => e.toJson()).toList(),
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -195,7 +195,7 @@ _$Begin _$$BeginFromJson(Map<String, dynamic> json) => _$Begin(
     );
 
 Map<String, dynamic> _$$BeginToJson(_$Begin instance) => <String, dynamic>{
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -207,7 +207,7 @@ _$And _$$AndFromJson(Map<String, dynamic> json) => _$And(
     );
 
 Map<String, dynamic> _$$AndToJson(_$And instance) => <String, dynamic>{
-      'exps': instance.exps,
+      'exps': instance.exps.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -219,7 +219,7 @@ _$Or _$$OrFromJson(Map<String, dynamic> json) => _$Or(
     );
 
 Map<String, dynamic> _$$OrToJson(_$Or instance) => <String, dynamic>{
-      'exps': instance.exps,
+      'exps': instance.exps.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -231,7 +231,7 @@ _$Cond _$$CondFromJson(Map<String, dynamic> json) => _$Cond(
     );
 
 Map<String, dynamic> _$$CondToJson(_$Cond instance) => <String, dynamic>{
-      'conds': instance.conds,
+      'conds': instance.conds.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -269,11 +269,11 @@ _$Let _$$LetFromJson(Map<String, dynamic> json) => _$Let(
 Map<String, dynamic> _$$LetToJson(_$Let instance) => <String, dynamic>{
       'bindings': instance.bindings
           .map((e) => {
-                r'$1': e.$1,
-                r'$2': e.$2,
+                r'$1': e.$1.toJson(),
+                r'$2': e.$2.toJson(),
               })
           .toList(),
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -294,11 +294,11 @@ _$LetStar _$$LetStarFromJson(Map<String, dynamic> json) => _$LetStar(
 Map<String, dynamic> _$$LetStarToJson(_$LetStar instance) => <String, dynamic>{
       'bindings': instance.bindings
           .map((e) => {
-                r'$1': e.$1,
-                r'$2': e.$2,
+                r'$1': e.$1.toJson(),
+                r'$2': e.$2.toJson(),
               })
           .toList(),
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -319,11 +319,11 @@ _$LetRec _$$LetRecFromJson(Map<String, dynamic> json) => _$LetRec(
 Map<String, dynamic> _$$LetRecToJson(_$LetRec instance) => <String, dynamic>{
       'bindings': instance.bindings
           .map((e) => {
-                r'$1': e.$1,
-                r'$2': e.$2,
+                r'$1': e.$1.toJson(),
+                r'$2': e.$2.toJson(),
               })
           .toList(),
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -335,7 +335,7 @@ _$SelfCondClause _$$SelfCondClauseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$SelfCondClauseToJson(_$SelfCondClause instance) =>
     <String, dynamic>{
-      'test': instance.test,
+      'test': instance.test.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -350,8 +350,8 @@ _$TestCondClause _$$TestCondClauseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$TestCondClauseToJson(_$TestCondClause instance) =>
     <String, dynamic>{
-      'test': instance.test,
-      'exps': instance.exps,
+      'test': instance.test.toJson(),
+      'exps': instance.exps.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -364,8 +364,8 @@ _$ProcCondClause _$$ProcCondClauseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ProcCondClauseToJson(_$ProcCondClause instance) =>
     <String, dynamic>{
-      'test': instance.test,
-      'proc': instance.proc,
+      'test': instance.test.toJson(),
+      'proc': instance.proc.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -379,7 +379,7 @@ _$ElseCondClause _$$ElseCondClauseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ElseCondClauseToJson(_$ElseCondClause instance) =>
     <String, dynamic>{
-      'exps': instance.exps,
+      'exps': instance.exps.map((e) => e.toJson()).toList(),
       'runtimeType': instance.$type,
     };
 
@@ -393,8 +393,8 @@ _$_Body _$$_BodyFromJson(Map<String, dynamic> json) => _$_Body(
     );
 
 Map<String, dynamic> _$$_BodyToJson(_$_Body instance) => <String, dynamic>{
-      'defs': instance.defs,
-      'exps': instance.exps,
+      'defs': instance.defs.map((e) => e.toJson()).toList(),
+      'exps': instance.exps.map((e) => e.toJson()).toList(),
     };
 
 _$ImplicitDef _$$ImplicitDefFromJson(Map<String, dynamic> json) =>
@@ -405,7 +405,7 @@ _$ImplicitDef _$$ImplicitDefFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$ImplicitDefToJson(_$ImplicitDef instance) =>
     <String, dynamic>{
-      'value': instance.value,
+      'value': instance.value.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -416,8 +416,8 @@ _$VarDef _$$VarDefFromJson(Map<String, dynamic> json) => _$VarDef(
     );
 
 Map<String, dynamic> _$$VarDefToJson(_$VarDef instance) => <String, dynamic>{
-      'name': instance.name,
-      'value': instance.value,
+      'name': instance.name.toJson(),
+      'value': instance.value.toJson(),
       'runtimeType': instance.$type,
     };
 
@@ -441,11 +441,11 @@ _$FunctionDef _$$FunctionDefFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$FunctionDefToJson(_$FunctionDef instance) =>
     <String, dynamic>{
-      'name': instance.name,
+      'name': instance.name.toJson(),
       'formals': {
-        r'$1': instance.formals.$1,
-        r'$2': instance.formals.$2,
+        r'$1': instance.formals.$1.map((e) => e.toJson()).toList(),
+        r'$2': instance.formals.$2?.toJson(),
       },
-      'body': instance.body,
+      'body': instance.body.toJson(),
       'runtimeType': instance.$type,
     };
