@@ -2,6 +2,29 @@ import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:syntax/syntax.dart';
 
 extension CallLam on Exp {
+  IMap<int, Exp> get allExps {
+    final exps = <int, Exp>{};
+    final worklist = [this];
+    while (worklist.isNotEmpty) {
+      final exp = worklist.removeAt(0);
+      exps[exp.label] = exp;
+      worklist.addAll(switch (exp) {
+        ULambda(:final body) => body.exps,
+        KLambda(:final body) => body.exps,
+        App(:final fun, :final args) => [fun, ...args],
+        Ref() => [],
+        ILit() => [],
+        EVoid() => [],
+        Undefined() => [],
+        Begin(:final body) => body.exps,
+        SetExp(:final value) => [value],
+        IfExp(:final condition, :final ifTrue, :final ifFalse) => [condition, ifTrue, ifFalse],
+        _ => throw UnimplementedError('$this')
+      });
+    }
+    return exps.lock;
+  }
+
   IMap<int, int> get exprLams {
     final topLam = -1;
     var (lams, labels) = exprLam(enclosingLam: topLam);
