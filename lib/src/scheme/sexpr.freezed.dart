@@ -14,6 +14,29 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SExpr _$SExprFromJson(Map<String, dynamic> json) {
+  switch (json['runtimeType']) {
+    case 'cons':
+      return SCons.fromJson(json);
+    case 'name':
+      return SName.fromJson(json);
+    case 'num':
+      return SNum.fromJson(json);
+    case 'bool':
+      return SBool.fromJson(json);
+    case 'string':
+      return SString.fromJson(json);
+    case 'char':
+      return SChar.fromJson(json);
+    case 'nil':
+      return SNil.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'SExpr',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
+}
+
 /// @nodoc
 mixin _$SExpr {
   @optionalTypeArgs
@@ -84,15 +107,18 @@ mixin _$SExpr {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SExprCopyWith<$Res> {
-  factory $SExprCopyWith(SExpr value, $Res Function(SExpr) then) = _$SExprCopyWithImpl<$Res, SExpr>;
+  factory $SExprCopyWith(SExpr value, $Res Function(SExpr) then) =
+      _$SExprCopyWithImpl<$Res, SExpr>;
 }
 
 /// @nodoc
-class _$SExprCopyWithImpl<$Res, $Val extends SExpr> implements $SExprCopyWith<$Res> {
+class _$SExprCopyWithImpl<$Res, $Val extends SExpr>
+    implements $SExprCopyWith<$Res> {
   _$SExprCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -103,7 +129,8 @@ class _$SExprCopyWithImpl<$Res, $Val extends SExpr> implements $SExprCopyWith<$R
 
 /// @nodoc
 abstract class _$$SConsCopyWith<$Res> {
-  factory _$$SConsCopyWith(_$SCons value, $Res Function(_$SCons) then) = __$$SConsCopyWithImpl<$Res>;
+  factory _$$SConsCopyWith(_$SCons value, $Res Function(_$SCons) then) =
+      __$$SConsCopyWithImpl<$Res>;
   @useResult
   $Res call({SExpr car, SExpr cdr});
 
@@ -112,8 +139,10 @@ abstract class _$$SConsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SConsCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SCons> implements _$$SConsCopyWith<$Res> {
-  __$$SConsCopyWithImpl(_$SCons _value, $Res Function(_$SCons) _then) : super(_value, _then);
+class __$$SConsCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SCons>
+    implements _$$SConsCopyWith<$Res> {
+  __$$SConsCopyWithImpl(_$SCons _value, $Res Function(_$SCons) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -151,14 +180,21 @@ class __$$SConsCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SCons> imp
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SCons extends SCons {
-  _$SCons(this.car, this.cdr) : super._();
+  _$SCons(this.car, this.cdr, {final String? $type})
+      : $type = $type ?? 'cons',
+        super._();
+
+  factory _$SCons.fromJson(Map<String, dynamic> json) => _$$SConsFromJson(json);
 
   @override
   final SExpr car;
   @override
   final SExpr cdr;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -174,13 +210,15 @@ class _$SCons extends SCons {
             (identical(other.cdr, cdr) || other.cdr == cdr));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, car, cdr);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SConsCopyWith<_$SCons> get copyWith => __$$SConsCopyWithImpl<_$SCons>(this, _$identity);
+  _$$SConsCopyWith<_$SCons> get copyWith =>
+      __$$SConsCopyWithImpl<_$SCons>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -273,11 +311,20 @@ class _$SCons extends SCons {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SConsToJson(
+      this,
+    );
+  }
 }
 
 abstract class SCons extends SExpr {
   factory SCons(final SExpr car, final SExpr cdr) = _$SCons;
   SCons._() : super._();
+
+  factory SCons.fromJson(Map<String, dynamic> json) = _$SCons.fromJson;
 
   SExpr get car;
   SExpr get cdr;
@@ -287,14 +334,17 @@ abstract class SCons extends SExpr {
 
 /// @nodoc
 abstract class _$$SNameCopyWith<$Res> {
-  factory _$$SNameCopyWith(_$SName value, $Res Function(_$SName) then) = __$$SNameCopyWithImpl<$Res>;
+  factory _$$SNameCopyWith(_$SName value, $Res Function(_$SName) then) =
+      __$$SNameCopyWithImpl<$Res>;
   @useResult
   $Res call({String name, int version});
 }
 
 /// @nodoc
-class __$$SNameCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SName> implements _$$SNameCopyWith<$Res> {
-  __$$SNameCopyWithImpl(_$SName _value, $Res Function(_$SName) _then) : super(_value, _then);
+class __$$SNameCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SName>
+    implements _$$SNameCopyWith<$Res> {
+  __$$SNameCopyWithImpl(_$SName _value, $Res Function(_$SName) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -316,14 +366,21 @@ class __$$SNameCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SName> imp
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SName extends SName {
-  _$SName(this.name, this.version) : super._();
+  _$SName(this.name, this.version, {final String? $type})
+      : $type = $type ?? 'name',
+        super._();
+
+  factory _$SName.fromJson(Map<String, dynamic> json) => _$$SNameFromJson(json);
 
   @override
   final String name;
   @override
   final int version;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -339,13 +396,15 @@ class _$SName extends SName {
             (identical(other.version, version) || other.version == version));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, version);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SNameCopyWith<_$SName> get copyWith => __$$SNameCopyWithImpl<_$SName>(this, _$identity);
+  _$$SNameCopyWith<_$SName> get copyWith =>
+      __$$SNameCopyWithImpl<_$SName>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -438,11 +497,20 @@ class _$SName extends SName {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SNameToJson(
+      this,
+    );
+  }
 }
 
 abstract class SName extends SExpr {
   factory SName(final String name, final int version) = _$SName;
   SName._() : super._();
+
+  factory SName.fromJson(Map<String, dynamic> json) = _$SName.fromJson;
 
   String get name;
   int get version;
@@ -452,14 +520,17 @@ abstract class SName extends SExpr {
 
 /// @nodoc
 abstract class _$$SNumCopyWith<$Res> {
-  factory _$$SNumCopyWith(_$SNum value, $Res Function(_$SNum) then) = __$$SNumCopyWithImpl<$Res>;
+  factory _$$SNumCopyWith(_$SNum value, $Res Function(_$SNum) then) =
+      __$$SNumCopyWithImpl<$Res>;
   @useResult
   $Res call({num n});
 }
 
 /// @nodoc
-class __$$SNumCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNum> implements _$$SNumCopyWith<$Res> {
-  __$$SNumCopyWithImpl(_$SNum _value, $Res Function(_$SNum) _then) : super(_value, _then);
+class __$$SNumCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNum>
+    implements _$$SNumCopyWith<$Res> {
+  __$$SNumCopyWithImpl(_$SNum _value, $Res Function(_$SNum) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -476,12 +547,19 @@ class __$$SNumCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNum> imple
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SNum extends SNum {
-  _$SNum(this.n) : super._();
+  _$SNum(this.n, {final String? $type})
+      : $type = $type ?? 'num',
+        super._();
+
+  factory _$SNum.fromJson(Map<String, dynamic> json) => _$$SNumFromJson(json);
 
   @override
   final num n;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -490,16 +568,21 @@ class _$SNum extends SNum {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SNum && (identical(other.n, n) || other.n == n));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SNum &&
+            (identical(other.n, n) || other.n == n));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, n);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SNumCopyWith<_$SNum> get copyWith => __$$SNumCopyWithImpl<_$SNum>(this, _$identity);
+  _$$SNumCopyWith<_$SNum> get copyWith =>
+      __$$SNumCopyWithImpl<_$SNum>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -592,11 +675,20 @@ class _$SNum extends SNum {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SNumToJson(
+      this,
+    );
+  }
 }
 
 abstract class SNum extends SExpr {
   factory SNum(final num n) = _$SNum;
   SNum._() : super._();
+
+  factory SNum.fromJson(Map<String, dynamic> json) = _$SNum.fromJson;
 
   num get n;
   @JsonKey(ignore: true)
@@ -605,14 +697,17 @@ abstract class SNum extends SExpr {
 
 /// @nodoc
 abstract class _$$SBoolCopyWith<$Res> {
-  factory _$$SBoolCopyWith(_$SBool value, $Res Function(_$SBool) then) = __$$SBoolCopyWithImpl<$Res>;
+  factory _$$SBoolCopyWith(_$SBool value, $Res Function(_$SBool) then) =
+      __$$SBoolCopyWithImpl<$Res>;
   @useResult
   $Res call({bool b});
 }
 
 /// @nodoc
-class __$$SBoolCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SBool> implements _$$SBoolCopyWith<$Res> {
-  __$$SBoolCopyWithImpl(_$SBool _value, $Res Function(_$SBool) _then) : super(_value, _then);
+class __$$SBoolCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SBool>
+    implements _$$SBoolCopyWith<$Res> {
+  __$$SBoolCopyWithImpl(_$SBool _value, $Res Function(_$SBool) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -629,12 +724,19 @@ class __$$SBoolCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SBool> imp
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SBool extends SBool {
-  _$SBool(this.b) : super._();
+  _$SBool(this.b, {final String? $type})
+      : $type = $type ?? 'bool',
+        super._();
+
+  factory _$SBool.fromJson(Map<String, dynamic> json) => _$$SBoolFromJson(json);
 
   @override
   final bool b;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -643,16 +745,21 @@ class _$SBool extends SBool {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SBool && (identical(other.b, b) || other.b == b));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SBool &&
+            (identical(other.b, b) || other.b == b));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, b);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SBoolCopyWith<_$SBool> get copyWith => __$$SBoolCopyWithImpl<_$SBool>(this, _$identity);
+  _$$SBoolCopyWith<_$SBool> get copyWith =>
+      __$$SBoolCopyWithImpl<_$SBool>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -745,11 +852,20 @@ class _$SBool extends SBool {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SBoolToJson(
+      this,
+    );
+  }
 }
 
 abstract class SBool extends SExpr {
   factory SBool(final bool b) = _$SBool;
   SBool._() : super._();
+
+  factory SBool.fromJson(Map<String, dynamic> json) = _$SBool.fromJson;
 
   bool get b;
   @JsonKey(ignore: true)
@@ -758,14 +874,17 @@ abstract class SBool extends SExpr {
 
 /// @nodoc
 abstract class _$$SStringCopyWith<$Res> {
-  factory _$$SStringCopyWith(_$SString value, $Res Function(_$SString) then) = __$$SStringCopyWithImpl<$Res>;
+  factory _$$SStringCopyWith(_$SString value, $Res Function(_$SString) then) =
+      __$$SStringCopyWithImpl<$Res>;
   @useResult
   $Res call({String s});
 }
 
 /// @nodoc
-class __$$SStringCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SString> implements _$$SStringCopyWith<$Res> {
-  __$$SStringCopyWithImpl(_$SString _value, $Res Function(_$SString) _then) : super(_value, _then);
+class __$$SStringCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SString>
+    implements _$$SStringCopyWith<$Res> {
+  __$$SStringCopyWithImpl(_$SString _value, $Res Function(_$SString) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -782,12 +901,20 @@ class __$$SStringCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SString>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SString extends SString {
-  _$SString(this.s) : super._();
+  _$SString(this.s, {final String? $type})
+      : $type = $type ?? 'string',
+        super._();
+
+  factory _$SString.fromJson(Map<String, dynamic> json) =>
+      _$$SStringFromJson(json);
 
   @override
   final String s;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -796,16 +923,21 @@ class _$SString extends SString {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SString && (identical(other.s, s) || other.s == s));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SString &&
+            (identical(other.s, s) || other.s == s));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, s);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SStringCopyWith<_$SString> get copyWith => __$$SStringCopyWithImpl<_$SString>(this, _$identity);
+  _$$SStringCopyWith<_$SString> get copyWith =>
+      __$$SStringCopyWithImpl<_$SString>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -898,27 +1030,40 @@ class _$SString extends SString {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SStringToJson(
+      this,
+    );
+  }
 }
 
 abstract class SString extends SExpr {
   factory SString(final String s) = _$SString;
   SString._() : super._();
 
+  factory SString.fromJson(Map<String, dynamic> json) = _$SString.fromJson;
+
   String get s;
   @JsonKey(ignore: true)
-  _$$SStringCopyWith<_$SString> get copyWith => throw _privateConstructorUsedError;
+  _$$SStringCopyWith<_$SString> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SCharCopyWith<$Res> {
-  factory _$$SCharCopyWith(_$SChar value, $Res Function(_$SChar) then) = __$$SCharCopyWithImpl<$Res>;
+  factory _$$SCharCopyWith(_$SChar value, $Res Function(_$SChar) then) =
+      __$$SCharCopyWithImpl<$Res>;
   @useResult
   $Res call({String s});
 }
 
 /// @nodoc
-class __$$SCharCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SChar> implements _$$SCharCopyWith<$Res> {
-  __$$SCharCopyWithImpl(_$SChar _value, $Res Function(_$SChar) _then) : super(_value, _then);
+class __$$SCharCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SChar>
+    implements _$$SCharCopyWith<$Res> {
+  __$$SCharCopyWithImpl(_$SChar _value, $Res Function(_$SChar) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -935,12 +1080,19 @@ class __$$SCharCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SChar> imp
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SChar extends SChar {
-  _$SChar(this.s) : super._();
+  _$SChar(this.s, {final String? $type})
+      : $type = $type ?? 'char',
+        super._();
+
+  factory _$SChar.fromJson(Map<String, dynamic> json) => _$$SCharFromJson(json);
 
   @override
   final String s;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -949,16 +1101,21 @@ class _$SChar extends SChar {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SChar && (identical(other.s, s) || other.s == s));
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SChar &&
+            (identical(other.s, s) || other.s == s));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, s);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SCharCopyWith<_$SChar> get copyWith => __$$SCharCopyWithImpl<_$SChar>(this, _$identity);
+  _$$SCharCopyWith<_$SChar> get copyWith =>
+      __$$SCharCopyWithImpl<_$SChar>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1051,11 +1208,20 @@ class _$SChar extends SChar {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SCharToJson(
+      this,
+    );
+  }
 }
 
 abstract class SChar extends SExpr {
   factory SChar(final String s) = _$SChar;
   SChar._() : super._();
+
+  factory SChar.fromJson(Map<String, dynamic> json) = _$SChar.fromJson;
 
   String get s;
   @JsonKey(ignore: true)
@@ -1064,18 +1230,28 @@ abstract class SChar extends SExpr {
 
 /// @nodoc
 abstract class _$$SNilCopyWith<$Res> {
-  factory _$$SNilCopyWith(_$SNil value, $Res Function(_$SNil) then) = __$$SNilCopyWithImpl<$Res>;
+  factory _$$SNilCopyWith(_$SNil value, $Res Function(_$SNil) then) =
+      __$$SNilCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SNilCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNil> implements _$$SNilCopyWith<$Res> {
-  __$$SNilCopyWithImpl(_$SNil _value, $Res Function(_$SNil) _then) : super(_value, _then);
+class __$$SNilCopyWithImpl<$Res> extends _$SExprCopyWithImpl<$Res, _$SNil>
+    implements _$$SNilCopyWith<$Res> {
+  __$$SNilCopyWithImpl(_$SNil _value, $Res Function(_$SNil) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$SNil extends SNil {
-  _$SNil() : super._();
+  _$SNil({final String? $type})
+      : $type = $type ?? 'nil',
+        super._();
+
+  factory _$SNil.fromJson(Map<String, dynamic> json) => _$$SNilFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
 
   @override
   String toString() {
@@ -1084,9 +1260,11 @@ class _$SNil extends SNil {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SNil);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SNil);
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -1181,9 +1359,18 @@ class _$SNil extends SNil {
     }
     return orElse();
   }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SNilToJson(
+      this,
+    );
+  }
 }
 
 abstract class SNil extends SExpr {
   factory SNil() = _$SNil;
   SNil._() : super._();
+
+  factory SNil.fromJson(Map<String, dynamic> json) = _$SNil.fromJson;
 }

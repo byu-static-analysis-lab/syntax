@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'sexpr.freezed.dart';
+part 'sexpr.g.dart';
 
 abstract class CSymbols {
   static final sQuote = SExpr.nameFrom("quote");
@@ -72,6 +73,8 @@ sealed class SExpr with _$SExpr {
       SName(:final version) => SName(s, version + 1),
     };
   }
+
+  factory SExpr.fromJson(Map<String, dynamic> json) => _$SExprFromJson(json);
 }
 
 extension on SName {

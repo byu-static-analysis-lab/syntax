@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:syntax/syntax.dart';
 
 part 'scheme_syntax.freezed.dart';
+part 'scheme_syntax.g.dart';
 
 class Term {
   static int maxLabel = 1;
@@ -107,7 +108,7 @@ sealed class Exp with _$Exp implements IExp {
       };
 
   factory Exp.cons(Exp car, Exp cdr) => App(Ref(CSymbols.sCons), [car, cdr]);
-
+  factory Exp.fromJson(Map<String, dynamic> json) => _$ExpFromJson(json);
   @override
   final label = Term.maxLabel++;
   late final ISet<SName> free = map(
@@ -340,6 +341,8 @@ sealed class CondClause with _$CondClause {
     proc: (test, proc) => test.free.addAll(proc.free),
     elseC: (exps) => exps.fold(ISet<SName>(), (acc, e) => acc.addAll(e.free)),
   );
+
+  factory CondClause.fromJson(Map<String, dynamic> json) => _$CondClauseFromJson(json);
 }
 
 extension on CondClause {
@@ -369,6 +372,8 @@ class Body with _$Body {
   late final ISet<SName> free = exps
       .fold(defs.fold(ISet<SName>(), (acc, d) => acc.addAll(d.value.free)), (acc, e) => acc.addAll(e.free))
       .removeAll(defs.map((d) => d.name).toList());
+
+      factory Body.fromJson(Map<String, dynamic> json) => _$BodyFromJson(json);
 }
 
 extension BodyX on Body {
@@ -394,6 +399,8 @@ sealed class Def with _$Def implements IDef {
   factory Def.variable(SName name, Exp value) = VarDef;
   factory Def.function(SName name, Formals formals, Body body) = FunctionDef;
   final label = Term.maxLabel++;
+
+  factory Def.fromJson(Map<String, dynamic> json) => _$DefFromJson(json);
 }
 
 mixin ImpDef on IDef {
